@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel = "stylesheet" href = "registration.css">
+        <link rel="stylesheet" href="../static/registration.css">   
     </head>
     <body>
         <header>
@@ -16,15 +16,15 @@
                         <div class = "container">
                             <div class = "item">
                                 <div class ="txt">
-                                        <form class ="name-form" id = "registration-form" action="#" target="_self"  method="post">
+                                        <form class ="name-form" id = "registration-form" action="#"   method="post">
                                             <!-- !!!тут action это куда будет форма отправляться!!!!--> 
                                             <p>      
                                                 <label>Имя <input type="text" name ="name" id ="name-field"  required></label>
-                                                <label>Фамилия <input type="text" name ="surname" id ="surname-field" required>
+                                                <label>Фамилия <input type="text" name ="surname" id ="surname-field" required></label>
                                             </p>
                                         
                                             <p>
-                                                <label for="date">Дата рождения: </label>
+                                                <label for="date-field">Дата рождения: </label>
                                                 <input type="date" id="date-field" name="date-field" required>
                                             </p>                                         
 
@@ -40,18 +40,18 @@
 
                                             <p>
                                                 <label for = "password-field">Пароль</label>
-                                                    <input type ="text" name="password" id="password-field" required required> 
+                                                    <input type ="text" name="password" id="password-field" required > 
                                             </p>
                                             
-                                            <div class = "registration-button">       
+                                            <div class = "reg-button">       
                                                 <p>
-                                                    <input type ="submit" name="registration-button-item" class = "registration-button-item" id ="registration-button" 
-                                                    value ="Создать" required>
+                                                    <button class = "registration-button-item" type ="submit"
+                                                    >Создать</button>
                                                 </p> 
                                             </div>    
                                         </form>    
                                     <div class = "sign-in-button">
-                                        <p><button class ="sign-in-button-item" onclick ="document.location ='https://vk.com/miami51'" id="sign-in-field" required>Есть аккаунт?</button></p>
+                                        <p><button class ="sign-in-button-item" onclick ="document.location ='https://vk.com/miami51'" id="sign-in-field" >Есть аккаунт?</button></p>
                                         <!-- !!!это ссылка завернутая в кнопку используется onclick и в одинарных кавычках ссылка
                                             туда кароче ссылку на страницу лога поставим и заебись будет пока там мой вк!!!!--> 
                                     </div> 
@@ -61,7 +61,7 @@
                 </div>    
             </section>
         </main>    
-        <script src="registration.js"></script>
+        <script src="../registration 22.03.2024/registration.js"></script>
     </body>
     <footer>
         <div class = "header-page">
