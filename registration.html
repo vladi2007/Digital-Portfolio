@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/registration.css">
+    <title>Document</title>
+</head>
+<body>
+        <header class = "main-header">
+            <nav class = "main-header-nav">
+                <ul class = "site-navigation">
+                    <li class = "site-navigation-item">
+                        <p><a href = "#" 
+                            class="nav-button">Сайт</a></p>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class = "registration">
+                <div class = "background">
+                    <h2 class = "registration-header">Регистрация</h2>
+                        <div class = "container">
+                            <div class = "item">
+                                <div class = "txt">
+                                    <form class = "name-form" id="registration-form" action ="#" method ="post">
+                                        <p>      
+                                            <label>Имя <input type="text" name ="name" id ="name-field" required></label>
+                                            <label>Фамилия <input type="text" name ="surname" id ="surname-field" required></label>>
+                                        </p>
+                        
+                                        <p>
+                                            <label for="date">Дата рождения: </label>
+                                            <input type="date" id="" name="date-field" style ="height: 16;" required>
+                                        </p>                                         
+                                       
+                                        <p>
+                                            <label>Мужской<input type = "radio" name ="sex"  value = "Мужской" id="male-field" required></label>
+                                            <label>Женский<input type = "radio" name ="sex" value = "Женский" id="female-feld" required></label>   
+                                        </p>       
+                                    
+                        
+                                        <p>
+                                            <label for = "mail-field">Почта</label>
+                                                <input type ="text" name="mail" id="mail-field" required>
+                                        </p>
+                                
+                                        <p>
+                                            <label for = "password-field">Пароль</label>
+                                                <input type ="text" name="password" id="password-field" required>
+                                        </p>
+                                
+                                            <p>
+                                                <!-- <button class ="sign-in-button" onclick ="" id="sign-in-field">Есть аккаунт?</button> -->
+                                            </p>
+                                        
+                                            <p>
+                                                <button class="submit-button" type="submit" >Отправить заявку</button>
+                                            </p>
+                                        </form> 
+                                    </div>    
+                                </div>      
+                            </div>       
+                        </div>
+                </div>    
+            </section>
+        </main> 
+        <script src="../static/registration.js"></script>
+    </body>
+    <footer>
+    </footer>
+</body>
+</html>
+     
+ 
