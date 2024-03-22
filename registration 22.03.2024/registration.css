@@ -1,0 +1,112 @@
+.header-page-item{ 
+ 
+  display: inline-block;
+  background: #FBCD80; /* Серый цвет фона */
+  color: black; /* Белый цвет текста */
+  padding: 1%; /* Поля вокруг текста */
+  text-decoration: none; 
+  border-radius: 2%; 
+  font-size: 140%;
+}
+
+.header-page{
+  text-align: center;
+}
+
+.head-page-link{
+  text-decoration: none;
+  color: black;
+}
+footer{
+  margin-top:4%;
+  color: black; /* Белый цвет текста */
+  padding: 1%; /* Поля вокруг текста */
+  border-radius: 1%; /* Скругляем уголки */
+  background-size: 20%;
+}
+
+body {
+    background-image: url("phone.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .background{ 
+    display: inline-block; /* Строчно-блочный элемент */
+    background: #FBCD80; /* Серый цвет фона */
+    color: black; /* Белый цвет текста */
+    padding: 1%; /* Поля вокруг текста */
+    border-radius: 1%; /* Скругляем уголки */
+    background-size: 100%;
+  }  
+
+main{
+  text-align:center;
+}
+
+.registration{
+  width: 100%; 
+  height:100%;
+  margin:auto;
+  background-position: center;
+  font-size: 130%;
+}
+
+
+.item {
+  display: flex;
+  font-size:  100%;
+}
+
+
+.container {
+  display: flex;
+  background-size: 100%;
+  padding: 5px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  max-width: 100%;
+}
+
+.txt{text-align: left;
+
+}
+input[type = "text"]{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: A0B3C2;
+  border: 2px solid black;
+  border-radius: 4px;
+  text-align: left;
+  font-size:  100%;
+}
+
+input[type = "radio"]{
+  font-family:Arial, Helvetica, sans-serif;
+  color: A0B3C2;
+  text-align: left;
+  font-size:  100%;
+}
+
+input[type = "date"]{
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: 100%;
+  text-align: left;
+}
+
+.sign-in-button-item{
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: 100%; 
+  
+}
+
+.registration-button-item{
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: 100%;
+}
+
+.registration-button  {text-align:center;   }
+
+.sign-in-button {text-align:center;}
