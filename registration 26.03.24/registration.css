@@ -22,7 +22,8 @@ img {
   text-decoration: none; 
   border-radius: 2%; 
   font-size: 170%;
-  margin-top: 3%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 .head-page-link{
