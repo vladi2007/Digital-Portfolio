@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <link rel = "stylesheet" href = "registration.css">
+    </head>
+    <body>
+        <header class = "main-header">
+            <nav class = "main-header-nav">
+                <ul class = "site-navigation">
+                    <li class = "site-navigation-item">
+                        <p><a href = "#" 
+                            class="nav-button">Сайт</a></p>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class = "registration">
+                <div class = "background">
+                    <h2 class = "registration-header">Регистрация</h2>
+                        <div class = "container">
+                            <div class = "item">
+                                <div class = "txt">
+
+                                    <form class = "name-form" action ="#" method ="get">
+                                        <p>      
+                                            <label>Имя <input type="text" name ="name" id ="name-field" ></label>
+                                            <label>Фамилия <input type="text" name ="surname" id ="surname-field">
+                                        </p>
+                                    </form>
+
+                                    <p><form class = "birth-date" action ="#" method ="get">
+                                        <p>
+                                            <label for="date">Дата рождения: </label>
+                                            <input type="date" id="" name="date-field" style ="height: 16;">
+                                        </p>                                         
+                                        </form>
+                                    </p>
+
+                                    <p><form class = "pick-sex" action ="#" method ="get">
+                                        <p>
+                                            <label>Мужской<input type = "radio" name ="Sex"  value = "Мужской" id="male-field"></label>
+                                            <label>Женский<input type = "radio" name ="Sex" value = "Женский" id="female-feld"></label>   
+                                        </p>       
+                                    </form>
+                                    </p>
+                                    
+                                    <form class = "mail" action ="#" method ="get">
+                                        <p>
+                                            <label for = "mail-field">Почта</label>
+                                                <input type ="text" name="mail" id="mail-field">
+                                        </p>
+                                    </form>
+
+                                    <form class = "password" action ="#" method ="get">
+                                        <p>
+                                            <label for = "password-field">Пароль</label>
+                                                <input type ="text" name="password" id="password-field">
+                                        </p>
+                                    </form>
+                                
+                                    <div class = "registration">
+
+                                        <form class = "sign-in" action = "#" target="_self">
+                                            <p>
+                                                <button class ="sign-in-button" onclick ="" id="sign-in-field">Есть аккаунт?</button>
+                                            </p>
+                                        </form>  
+
+                                        <form class = "Sign-Up" action ="#">
+                                            <p>
+                                                <input type ="submit" name="sign-up-button" 
+                                                id="sign-up-field" value = "Создать" style="font-size:16px">
+                                            </p>
+                                        </form> 
+                                    </div>    
+                                </div>      
+                            </div>       
+                        </div>
+                </div>    
+            </section>
+        </main>    
+    </body>
+    <footer>
+    </footer>
+</html>  
