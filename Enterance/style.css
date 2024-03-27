@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+.form {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.header1 {
+  margin-bottom: 12px;
+}
+
+#mail-field {
+  margin-bottom: 32px;
+}
+
+#password-field {
+  margin-bottom: 6px;
+}
+
+.galochka-section{
+  margin-bottom: 26px;
+}
+
+.nav-button{ 
+  display: inline;
+  background: #FBCD80; /* Серый цвет фона */
+  color: black; /* Белый цвет текста */
+  padding: 20px; /* Поля вокруг текста */
+  text-decoration: none; 
+  border-radius: 0px; 
+  font-size: 20px;
+}
+  
+  
+.site-navigation-item{
+
+  display: inline-block; /* Строчно-блочный элемент */
+}
+  
+body {
+  background-image: url("image/phone.jpg") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  
+.background{
+  
+  display: inline-block; /* Строчно-блочный элемент */
+  background: #FBCD80; /* Серый цвет фона */
+  margin-left: auto;
+  margin-right: auto;
+  width: 442px;
+  color: black; /* Белый цвет текста */
+  padding-left: 45px; /* Поля вокруг текста */
+  padding-right: 45px;
+  padding-top: 32px;
+  padding-bottom: 48px;
+  border-radius: 2px; /* Скругляем уголки */
+  margin-bottom: 28px;
+
+}
+
+  .skip-text {
+    justify-self: center;
+    align-self: center;
+  }
+
+  .skip-button-section {
+    background: #FBCD80;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    padding: 16px 8px;
+    width: 339px;
+    height: 56px;
+    align-self: center;
+    line-height: 0;
+    font-size: 20px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .registration{background-position: center;
+      width: 100%;
+      align-self: center;
+      text-align:center ;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .txt {
+      text-align: left;
+      font-size:  20px;
+  }
+  
+  .cnotainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: 10px;
+      max-width: 700px;
+    }
+  
+  .base-input {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: A0B3C2;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+  }
+  
+  input[type = "radio"]{
+    font-family:Arial, Helvetica, sans-serif;
+    color: A0B3C2;
+  }
+  
+  input[type = "sumbit"]{
+    font-family:Arial, Helvetica, sans-serif;
+    color: A0B3C2;
+  }
+  
+  
+  input[type = "date"]{
+    border: 2px solid black;
+    border-radius: 4px;
+  }
+  
+  .sign-in-button{
+    color:A0B3C2;
+    font-size: 16px;
+  }
+  
+  .Sign-up{
+    border: 2px solid black;
+    border-radius: 4px;
+  }
