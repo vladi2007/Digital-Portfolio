@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+    <body>
+        <main>
+            <section class = "registration">
+                <div class = "background">
+                    <img class="logo" width="128px" height="80px" src="image/photo_2024-03-17_17-09-34.jpg">
+                    <h1 class="header1">Вход сайт</h1>
+                        <div class = "cnotainer">
+                            <div class = "item">
+                                <div class = "txt">                                  
+                                    <form class = "Mail" id = "entrance-form" action ="#" method ="get" >
+                                        <div class="form">
+                                            <input type ="email" name="email" id="mail-field" placeholder="Почта" class="base-input" required>
+                                            <input type ="password" name="password" id="password-field" placeholder="Пароль" class="base-input" minlength="8" maxlength="20" required>
+                                            <input class="show-password" type="checkbox" id="show-pass"> 
+                                            <label class="checkbox-label" for="show-pass">Показать пароль</label>
+                                            <div class="galochka-section">
+                                                <input type="checkbox" name="" class="check-box-button" id="remember">
+                                                <label for="remember">запомнить</label>
+                                                <input type="checkbox" name="" class="check-box-button" id="register">
+                                                <label for="register">регистрация</label>
+                                            </div>
+                                            <button type="submit" class="enter-submit-button usual-button" disabled>Создать</button>
+                                        </div>
+                                    </form>
+                                </div>      
+                            </div>       
+                        </div>
+                </div>
+                <a class="skip-button-section">
+                    <p class="skip-text">пропустить регистрацию</p>
+                </a>    
+            </section>
+        </main>  
+        <script src="login.js"></script>
+    </body>
+    <footer>
+    </footer>
+</html>  
