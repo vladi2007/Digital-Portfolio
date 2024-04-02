@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="registration.css">   
+    </head>
+    <body>
+        <header>
+        </header>
+        <main>
+            <section class = "registration">
+                <div class = "background">
+                    <h2 class = "registration-header">Создать аккаунт</h2>
+                        <div class = "container">
+                            <div class = "item">
+                                <div class ="txt">
+                                        <form class ="name-form" id = "registration-form" action="#"   method="post">
+                                            <!-- !!!тут action это куда будет форма отправляться!!!!--> 
+                                            <p class = "name">      
+                                                <label><input type="text" name ="first_name" id ="name-field"  required  minlength="2" maxlength="12">Имя</label>
+                                                <label><input type="text" name ="last_name" id ="surname-field" required  minlength="2" maxlength="25">Фамилия</label>
+                                            </p>
+                                        
+                                            <p>
+                                                <label for="date-field">Дата рождения: </label>
+                                                <input type="date" id="date-field" name="birth_date" required >
+                                            </p>                                         
+                                        
+                                            <p>
+                                                <label for = "mail-field">Почта</label>
+                                                    <input type ="email" name="email" id="email" required>
+                                            </p>
+
+                                            <p>
+                                                <label>Мужской<input type = "radio" name ="sex"  value = "male" id="male-field" required></label>
+                                                <label>Женский<input type = "radio" name ="sex" value = "female" id="female-feld" required></label>   
+                                            </p> 
+
+                                            <p>
+                                                <label for = "password-field">Пароль</label>
+                                                    <input type ="password" name="password" id="password-field" value="Пароль" required> 
+                                            </p>
+                                            <p><input class="show-password" type="checkbox" id="show-pass">
+                                                <span class="passwordMessage" style="color: black;"></span><br>
+                                                <label class="checkbox-label" for="show-pass">Показать пароль</label></p>
+                                            
+                
+                                            <div class = "reg-button">       
+                                                <p>
+                                                    <button class = "registration-button-item" type ="submit" disabled>Создать</button>
+                                                </p> 
+                                            </div>    
+                                        </form>    
+                                    <div class = "sign-in-button">
+                                        <p><button class ="sign-in-button-item" onclick ="document.location ='https://vk.com/miami51'" id="sign-in-field" >Есть аккаунт?</button></p>
+                                        <!-- !!!это ссылка завернутая в кнопку используется onclick и в одинарных кавычках ссылка
+                                                туда кароче ссылку на страницу лога поставим и заебись будет пока там мой вк!!!!--> 
+                                    </div> 
+                                </div>         
+                            </div>       
+                        </div>
+                </div>    
+            </section>
+        </main>    
+        <script src="registatrion-form.js"></script>
+        <script src="registration.js"></script>
+    </body>
+    <footer>
+        <div class = "header-page">
+            <div class ="header-page-item">
+                <a href ="https://vk.com/miami51" class ="head-page-link"><nobr>Вернуться на главную</nobr></a>
+            </div>
+        </div>
+    </footer>
+</html>  
