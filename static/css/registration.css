@@ -1,0 +1,126 @@
+html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width:100vw;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.header-page-item{ 
+  display: inline-block;
+  background: #FBCD80; /* Серый цвет фона */
+  color: black; /* Белый цвет текста */
+  padding: 2%; /* Поля вокруг текста */
+  text-decoration: none; 
+  border-radius: 2%; 
+  font-size: 170%;
+  margin:3%;
+}
+
+.head-page-link{
+  text-decoration: none;
+  color: black;
+}
+
+.header-page{
+  text-align: center;
+}
+
+footer{
+  color: black; /* Белый цвет текста */
+  padding: 2px; /* Поля вокруг текста */
+  border-radius: 1px; /* Скругляем уголки */
+  background-size: 30px;
+}
+
+body {
+  background: url("/static/image/phone.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.background{ 
+  text-align:center;
+  display: inline-block; /* Строчно-блочный элемент */
+  background: #FBCD80; /* Серый цвет фона */
+  color: black; /* Белый цвет текста */
+  padding: 5px; /* Поля вокруг текста */
+  border-radius: 1%; /* Скругляем уголки */
+}  
+
+.registration{
+  font-size:  125%;
+}
+
+.container {
+  background-size: 100%;
+  padding: 5px;
+
+  border-radius: 4px;
+  max-width: 100%;
+}
+
+.txt{text-align: left;
+}
+
+input[type = "text"]{
+  background-color: A0B3C2;
+  border: 2px solid black;
+  border-radius: 4px;
+  text-align: left;
+  font-size:  100%;
+}
+
+input[type = "email"]{
+  background-color: A0B3C2;
+  border: 2px solid black;
+  border-radius: 4px;
+  text-align: left;
+  font-size:  100%;
+  width: 100%;
+}
+
+input[type = "radio"]{
+  color: A0B3C2;
+  text-align: left;
+  font-size:  100%;
+}
+.pass{
+  width:100%;
+}
+input[type = "date"]{
+  background-color: A0B3C2;
+  border: 2px solid black;
+  border-radius: 4px;
+  text-align: left;
+  font-size:  100%;
+}
+
+input[type = "password"]{
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: 100%;
+  text-align: left;
+  width: 100%;
+}
+
+.sign-in-button-item{
+  color:#000;
+
+  font-size: 100%; 
+}
+
+.registration-button-item{
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: 100%;
+  width: 200px;
+}
+
+.reg-button  {text-align:center;   }
+
+.sign-in-button {text-align:center;}
