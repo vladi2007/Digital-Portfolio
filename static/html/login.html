@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <link rel = "stylesheet" href = "/static/css/login.css">
+    </head>
+    <body>
+        <main>
+            <section class = "registration">
+                <div class = "background">
+                    <img class="logo" width="128px" height="80px" src="/static/image/login.jpg">
+                    <h1 class="header1">Вход</h1>
+                        <div class = "cnotainer">
+                            <div class = "item">
+                                <div class = "txt">                                  
+                                    <form class = "Mail" id = "entrance-form" action ="#" method ="get" >
+                                        <div class="form">
+                                            <input type ="email" name="email" id="mail-field" placeholder="Почта" class="base-input" required>
+                                            <input type ="password" name="password" id="password-field" placeholder="Пароль" class="base-input" minlength="8" maxlength="20" required>
+                                            <p><input class="show-password" type="checkbox" id="show-pass"> 
+                                            <label class="checkbox-label" for="show-pass">Показать пароль</label> 
+                                            </p>
+                                            <div class="galochka-section">
+                                                <input type="checkbox" name="" class="check-box-button" id="remember">
+                                                <label for="remember" class="check-box-button">Запомнить</label>
+                                                <a href ="#" class = "clear-password">Сбросить пароль</a>
+                                            </div>
+                                            <div class = "log-in-button"><button type="submit" class="enter-submit-button-usual-button" >Вход</button></div>
+                                        </div>
+                                    </form>
+                                    <div class = "sign-in-button">
+                                        <p><a class ="sign-in-button-item" href ="https://vk.com/miami51" id="sign-in-field" >Нет аккаунта?</a></p>
+                                    </div>  
+                                </div>      
+                            </div>       
+                        </div>
+                </div>
+                <a class="skip-button-section" href ="https://vk.com/miami51">
+                    <p class="skip-text">Вернуться на главную</p>
+                </a>    
+            </section>
+        </main>  
+        <script src="/static/js/login.js"></script>
+        <script src="/static/js/login-form.js"></script>
+    </body>
+    <footer>
+    </footer>
+</html>  
