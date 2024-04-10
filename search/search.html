@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="search.css">   
+</head>
+<body>
+<header class ="main-header">
+    <div class ="row">
+        <a href = "#" 
+            class="nav-link-1" id ="link-1"><nobr>Лого</nobr></a>
+        <a href = "#" 
+                class="nav-link-2" id ="link-2"><nobr>Моя страница</nobr></a>
+        <a href = "#" 
+            class="nav-link-3" id ="link-3"><nobr>Мои достижения</nobr></a>                           
+                <!--Вот тут если не авторизированный пользователь, то вторая ссылка пропадает display:none, в третьей текст меняется на "Вход"
+                и добавляется margin-left: calc(50% - 130px);, у в четвертой текст меняется на "Регистрация" и соответственно ссылки меняются
+                все это по класссам и айдишникам джавой -->
+        <a href = "#" 
+            class="nav-link-4" id ="link-4"><nobr>Поиск</nobr></a>                                       
+</header>
+
+<main>
+    <input type ="text" name="search" id="mail-field" placeholder="Поиск" class="search-input">
+    <ul class="list">
+        <li class="el"><img src="image/IMG_20240317_170456.jpg" class="avatar"><div class="section"><p class="big-info">имя фамилия</p><p class="small-info">инфа поменьше</p></div></li>
+        <li class="el"><img src="image/IMG_20240317_170456.jpg" class="avatar"><div class="section"><p class="big-info">имя фамилия</p><p class="small-info">инфа поменьше</p></div></li>
+        <li class="el"><img src="image/IMG_20240317_170456.jpg" class="avatar"><div class="section"><p class="big-info">имя фамилия</p><p class="small-info">инфа поменьше</p></div></li>
+    </ul>
+</main>
+</body>
+</html>
