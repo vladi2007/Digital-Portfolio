@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="/static/css/profile.css">   
+    </head>
+    <body>
+        <header class ="main-header">
+            <div class ="row">
+                <a href = "#" 
+                    class="nav-link-1" id ="link-1"><nobr>Лого</nobr></a>
+                <a href = "#" 
+                        class="nav-link-2" id ="link-2"><nobr>Моя страница</nobr></a>
+                <a href = "#" 
+                    class="nav-link-3" id ="link-3"><nobr>Мои достижения</nobr></a>                           
+                        <!--Вот тут если не авторизированный пользователь, то вторая ссылка пропадает display:none, в третьей текст меняется на "Вход"
+                        и добавляется margin-left: calc(50% - 130px);, у в четвертой текст меняется на "Регистрация" и соответственно ссылки меняются
+                        все это по класссам и айдишникам джавой -->
+                <a href = "#" 
+                    class="nav-link-4" id ="link-4"><nobr>Поиск</nobr></a>                                       
+        </header>
+
+        <main>
+            <section class = "main-info-1">
+                <div>                  
+                    <img class = "avatar" src ="/static/image/login.jpg" id = "profile-avatar" style="height: 120px; width: 120px;">
+                    <span class = "name" id = "name">Имя Фамилия</span>
+                    <a class = "results" href = "https://vk.com/miami51" id = "results">Достижения</a>
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn" id ="more">Ещё</button>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a href="#" id ="leave">Выйти</a>
+                          <a href="#" id = "change-akk">Редактировать профиль</a>
+                          <!--еще додумать как будем делать редактирование полей ( я чето смотрел что можно по айдишнику поле превратить в форму input text 
+                        чето такое и типа так редачить но надо додумать чтоб не всрато было поэтому посмтори тоже) -->
+                        </div>
+                      </div>
+                    <!--Вот тут если на чужом профиле сидишь, то нужна кнопка подписаться/отписаться(вместо кнопки "Ещё" потому что она выдаёт меню: выйти
+                        и редактировать профиль, а на чужом профиле ,естественно,  мы к таким функциям доступ не имеем), значит надо  class = "show" убрать -
+                    display:none - это он там в css в самом низу( он делает выпадающее меню), 
+                    и заменить текст на подписаться( если не подписан) и на отписаться( если подписан)
+                    (то есть еще делаем проверку на то что ты подписан на профиль этот) и сделать чтобы по кнопке происходила отписка/подписка. -->
+                    
+                </div>   
+                
+                <div class="line-1"><div class ="about-me">
+                    <ul class ="about-me-list">Обо мне:
+                        <li class = "about-me-list-item" id ="birth">Дата рождения:</li>
+                        <li class = "about-me-list-item" id ="sex">Пол:</li>
+                        <li class = "about-me-list-item" id ="education">Образование:</li>
+                        <li class = "about-me-list-item" id ="work">Работа:</li>
+                    </ul>
+                </div>
+                
+                <div class ="Subscriptions">
+                    <ul class ="Subscriptions-list"><a class = "go-to-Subscriptions-page" href ="#">Подписки:</a>
+                        <div class = "Subscribers-list">
+                            <li class = "Subscribers-list-item">
+                                <a  href = "https://vk.com/miami51"  class = "profiles-href" id = "profile-1">
+                                    <img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-1" style="height: 80px; width: 80px;" >
+                                    <p class = "Subscribers-name" id ="name-1">Имя<br> Фамилия</p>
+                                </a>
+                            </li>
+
+                            <li class = "Subscribers-list-item">
+                                <a href = "https://vk.com/miami51" class = "profiles-href" id = "profile-2">
+                                    <img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-2" style="height: 80px; width: 80px;">
+                                    <p class = "Subscribers-name" id ="name-2">Имя<br> Фамилия</p>
+                                </a>
+                            </li>
+
+                            <li class = "Subscribers-list-item">
+                                <a href = "https://vk.com/miami51" class = "profiles-href" id = "profile-3">
+                                    <img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-3" style="height: 80px; width: 80px;">
+                                    <p class = "Subscribers-name" id ="name-3" >Имя<br> Фамилия</p>
+                                </a>
+                            </li>
+                            
+                            <li class = "Subscribers-list-item">
+                                <a href = "https://vk.com/miami51" class = "profiles-href" id = "profile-4">
+                                    <img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-4" style="height: 80px; width: 80px;">
+                                    <p class = "Subscribers-name" id ="name-4">Имя<br> Фамилия</p>
+                                </a>
+                            </li>
+
+                            <li class = "Subscribers-list-item">
+                                <a href = "https://vk.com/miami51" class = "profiles-href" id = "profile-5">
+                                    <img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-5" style="height: 80px; width: 80px;">
+                                    <p class = "Subscribers-name" id ="name-5">Имя<br> Фамилия</p>
+                                </a>
+                            </li>
+
+                            <li class = "Subscribers-list-item">
+                                <a href = "https://vk.com/miami51" class = "profiles-href" id = "profile-6">
+                                    <img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-6" style="height: 80px; width: 80px;">
+                                    <p class = "Subscribers-name" id ="name-6">Имя<br> Фамилия</p>
+                                </a>
+                            </li>       
+                        </div>   
+                    </ul>
+                </div>
+                </div>    
+
+                <div class ="line-2"><div class ="contacts">
+                    <ul class ="contacts-list">Контакты:
+                        <li class = "contacts-list-item" id ="vk">Вконтакте:</li>
+                        <li class = "contacts-list-item" id ="email">Почта:</li>
+                        <li class = "contacts-list-item" id ="tg">Telegram:</li>
+                    </ul>
+                </div>
+
+                <div class ="Subscribers">
+                    <ul class ="Subscribers-text"><a class ="go-to-Subscribers-page" href ="#">Подписчики:</a>
+                        <div class = "Subscribers-list">
+                            <li class = "Subscribers-list-item">
+                                <a href = "https://vk.com/miami51" class = "profiles-href" id = "profile-7">
+                                    <img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-7" style="height: 80px; width: 80px;">
+                                    <p class = "Subscribers-name" id ="name-7">Имя<br> Фамилия</p>
+                                </a>
+                            </li>
+
+                            <li class = "Subscribers-list-item">
+                                <a href = "https://vk.com/miami51" class = "profiles-href" id = "profile-8">
+                                    <img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-8" style="height: 80px; width: 80px;">
+                                    <p class = "Subscribers-name" id ="name-8">Имя<br> Фамилия</p>
+                                </a>
+                            </li>
+
+                            <li class = "Subscribers-list-item">
+                                <a href = "https://vk.com/miami51" class = "profiles-href" id = "profile-9">
+                                    <img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-9" style="height: 80px; width: 80px;">
+                                    <p class = "Subscribers-name" id ="name-9">Имя<br> Фамилия</p>
+                                </a>
+                            </li>
+                            
+                            <li class = "Subscribers-list-item">
+                                <a href = "https://vk.com/miami51" class = "profiles-href" id = "profile-10">
+                                    <img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-10" style="height: 80px; width: 80px;">
+                                    <p class = "Subscribers-name" id ="name-10">Имя<br> Фамилия</p>
+                                </a>
+                            </li>
+
+                            <li class = "Subscribers-list-item">
+                                <a href = "https://vk.com/miami51" class = "profiles-href" id = "profile-11">
+                                    <img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-11" style="height: 80px; width: 80px;">
+                                    <p class = "Subscribers-name" id ="name-11">Имя<br> Фамилия</p>
+                                </a>
+                            </li>
+
+                            <li class = "Subscribers-list-item">
+                                <a href = "https://vk.com/miami51" class = "profiles-href" id = "profile-12">
+                                    <img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-12" style="height: 80px; width: 80px;">
+                                    <p class = "Subscribers-name" id ="name-12">Имя<br> Фамилия</p>
+                                </a>
+                            </li>
+                        </div>        
+                    </ul>
+                </div>
+                </div>  
+                <br>
+            </section>
+        </main>  
+    </body>
+    <footer>
+    </footer>       
+
+    <script>
+        /* Когда пользователь нажимает на кнопку,
+переключение между скрытием и отображением раскрывающегося содержимого */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Закройте выпадающее меню, если пользователь щелкает за его пределами
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+    </script>    
+
+<!--это я спиздил скрипт чтобы кнопку "Ещё" сделать -->   
