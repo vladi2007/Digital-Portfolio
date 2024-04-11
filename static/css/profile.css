@@ -1,0 +1,236 @@
+html {
+   margin: 0 5%;
+   display: flex;
+   justify-content: center;
+   flex-wrap:wrap; 
+}
+
+.row{
+    width: 1360px;  
+   display: flex;
+   justify-content: space-between;
+   flex-wrap:wrap; 
+   margin-top: 0px;  
+   line-height: 20px;;     
+}
+
+.row > a {
+   padding: 5px 15px;;
+   background-color: #FBCD80 ; 
+   font-size:20px;
+   border-radius: 4px;;
+   text-align: center; 
+}
+
+.nav-link-1{
+   width: 40px;  
+}
+
+.nav-link-2{
+   width: 130px;
+}
+
+.nav-link-3{
+   width: 140px;
+   
+}
+
+.nav-link-4{
+   width: 130px;;
+}
+
+a{
+   text-decoration: none;
+   color:#1E1E1E;
+}
+
+body {
+   background: url("/static/image/phone.jpg") no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;   
+}
+
+.main-info-1{
+   border-radius: 8px;;
+   margin-top: 25px;;
+   width: 100%;   
+   height: 100%;
+   background-color: #FBCD80;
+}
+
+.avatar{
+   padding-top: 20px;;
+   padding-left: 20px;; 
+}
+
+.name{
+   padding-left: 20px;
+   font-size: 40px;
+   line-height: 20px;
+}
+
+.results{
+   padding-left:60px;
+   font-size: 40px;
+   line-height: 20px;
+}
+
+.about-me{border-radius: 8px;;
+   color: #FFFFFF;
+   background-color: #19272A ;
+   width: calc(50% - 20px);
+   font-size: 24px;
+}
+
+.contacts-list-item{
+   line-height: 50px;;
+}
+
+.about-me-list-item{
+   line-height: 40px;
+}
+
+.Subscriptions{text-align: left;
+   color: #FFFFFF;
+   margin-left: 20px;;
+   padding-left: -20px;
+   border-radius: 8px;;
+   background-color: #19272A ;
+   width: calc(50% - 20px - 20px);
+   font-size: 24px;
+
+}
+.contacts{border-radius: 8px;;
+   color: #FFFFFF;
+   background-color: #19272A ;
+   width: calc(50% - 20px);
+   font-size: 24px;
+}
+
+.line-1{
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   margin-top:20px;
+}
+
+.line-2{
+   margin-top:20px;
+   display: flex;
+   justify-content: center;
+   width: 100%;
+}
+
+.Subscribers{border-radius: 8px;;
+   color: #FFFFFF;
+   margin-left: 20px;;
+   padding-left: -20px;
+   text-align: left;
+   background-color: #19272A ;
+   width: calc(50% - 20px - 20px);
+   font-size: 24px;
+}
+
+ul{
+   padding:0;
+   list-style-position:inside;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+.Subscriptions > ul{
+   list-style-type: none;
+}
+
+.Subscribers > ul{
+   list-style-type: none;
+}
+
+.Subscribers-list{
+   display: flex;;
+   justify-content: space-between;
+}
+
+.Subscribers-avatar{
+   margin-top: 20px;;
+}
+
+.Subscribers-name{
+   margin-top: 0px;;
+   font-size: 20px;;
+   text-align: center;
+}
+
+.profiles-href{
+   color: #FFFFFF;
+}
+
+.go-to-Subscribers-page{
+   color: #FFFFFF;
+}
+
+.go-to-Subscriptions-page{
+   color: #FFFFFF;
+}
+footer{
+   margin-bottom:20px;
+}
+
+/* Кнопка выпадающего списка */
+.dropbtn {
+   background-color: #19272A ;
+   color: white;
+   padding: 16px;
+   font-size: 16px;
+   border: none;
+   border-radius: 8px;;
+   cursor: pointer;  
+   min-width: 160px;
+ }
+ 
+ /* Кнопка выпадающего меню при наведении и фокусировке */
+ .dropbtn:hover, .dropbtn:focus {
+   background-color: #19272A ;
+ }
+ 
+ /* Контейнер <div> - необходим для размещения выпадающего содержимого */
+ .dropdown {
+   position: relative;
+   display: inline-block;
+   right: 0;;
+   border-radius: 4px;;
+   float:right;
+   margin-top:92px;
+   
+   margin-right: 20px;;
+ }
+ 
+ /* Выпадающее содержимое (скрыто по умолчанию) */
+ .dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #f1f1f1;
+
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+
+
+   right:0;
+ }
+ 
+ /* Ссылки внутри выпадающего списка */
+ .dropdown-content a {
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+
+ }
+ 
+ /* Изменение цвета выпадающих ссылок при наведении курсора */
+ .dropdown-content a:hover {background-color: #ddd;}
+ 
+ /* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
+ .show {display:block;}
