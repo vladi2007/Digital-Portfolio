@@ -45,7 +45,7 @@ a{
 }
 
 body {
-   background: url("/static/image/phone.jpg") no-repeat center center fixed;
+   background: url("phone.jpg") no-repeat center center fixed;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
@@ -375,11 +375,10 @@ footer{
    vertical-align: top;
    display: block;
    margin-bottom: 6px;
-
-   font-size: 24px;
-
-
-   color: #000;
+   font-weight: 500;
+   font-size: 12px;
+   line-height: 16px;
+   color: #686ea1;
  }
  
  .form_text:after {
@@ -391,7 +390,7 @@ footer{
  }
  
  .form_label input,
- .field_multiselect {
+ .field_multiselect {background-color: #ffffff;
    position: relative;
    width: 100%;
    display: block;
@@ -450,7 +449,6 @@ footer{
  .multiselect_block {
    position: relative;
    width: 100%;
-   background-color: #FFFFFF;
  }
  
  .field_select {
@@ -486,7 +484,7 @@ footer{
  .field_multiselect button {
    position: relative;
    padding: 7px 34px 7px 8px;
-   background-color: #fff;
+   background: #ebe4fb;
    border-radius: 4px;
    margin-right: 9px;
    margin-bottom: 10px;
@@ -501,7 +499,8 @@ footer{
    right: 10px;
    width: 16px;
    height: 16px;
-
+   background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.4958 6.49499C19.7691 6.22162 19.7691 5.7784 19.4958 5.50504C19.2224 5.23167 18.7792 5.23167 18.5058 5.50504L12.5008 11.5101L6.49576 5.50504C6.22239 5.23167 5.77917 5.23167 5.50581 5.50504C5.23244 5.7784 5.23244 6.22162 5.50581 6.49499L11.5108 12.5L5.50581 18.505C5.23244 18.7784 5.23244 19.2216 5.50581 19.495C5.77917 19.7684 6.22239 19.7684 6.49576 19.495L12.5008 13.49L18.5058 19.495C18.7792 19.7684 19.2224 19.7684 19.4958 19.495C19.7691 19.2216 19.7691 18.7784 19.4958 18.505L13.4907 12.5L19.4958 6.49499Z' fill='%234F5588'/%3E%3C/svg%3E") 50% 50% no-repeat;
+   background-size: contain;
  }
  
  .multiselect_label {
@@ -536,7 +535,7 @@ footer{
    width: 40px;
    left: initial;
    right: 4px;
-   background: #ffffff ;
+   background: #ffffff url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.4958 6.49499C19.7691 6.22162 19.7691 5.7784 19.4958 5.50504C19.2224 5.23167 18.7792 5.23167 18.5058 5.50504L12.5008 11.5101L6.49576 5.50504C6.22239 5.23167 5.77917 5.23167 5.50581 5.50504C5.23244 5.7784 5.23244 6.22162 5.50581 6.49499L11.5108 12.5L5.50581 18.505C5.23244 18.7784 5.23244 19.2216 5.50581 19.495C5.77917 19.7684 6.22239 19.7684 6.49576 19.495L12.5008 13.49L18.5058 19.495C18.7792 19.7684 19.2224 19.7684 19.4958 19.495C19.7691 19.2216 19.7691 18.7784 19.4958 18.505L13.4907 12.5L19.4958 6.49499Z' fill='%234F5588'/%3E%3C/svg%3E") 50% 50% no-repeat;
  }
  
  .multiselect_checkbox:checked ~ .field_multiselect_help {
