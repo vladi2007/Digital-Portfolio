@@ -35,41 +35,43 @@
                               <div class="popup__wrapper">
                                 <div id="blablabla">    
                                     <form   method="post" id ="form"></form>
-                                        <p><input name="name" placeholder="Имя" type="text" id ="name" >
-                                        <input name="surname" placeholder="Фамилия" type="text" id ="surname" ></p>
-                                        <p>Дата рождения <input name="date"  type="date" id ="name" ></p>
-                                        <p><label>Мужской<input type = "radio" name ="sex"  value = "male" id="male-field" required></label>
-                                        <label>Женский<input type = "radio" name ="sex" value = "female" id="female-feld" required></label>  </p>
-                                        <p><input name="about-me" placeholder="Образование" type="text" id ="about-me" >
-                                        <input name="work" placeholder="Работа" type="text" id ="work" ></p>
-                                        <p><input name="vk" placeholder="Вконтакте" type="text" id ="vk" >
-                                        <input name="city" placeholder="Город" type="text" id ="city" ></p>          
-                                        <p><input name="mail" placeholder="Почта" type="text" id ="mail">
-                                        <input name="tg" placeholder="Telegram" type="text" id ="tg" ></p>
+                                        <p><input name="name" placeholder="Имя" type="text" id ="name-edit" >
+                                        <input name="surname" placeholder="Фамилия" type="text" id ="surname-edit" ></p>
+                                        <p>Дата рождения <input name="date"  type="date" id ="date-edit" ></p>
+                                        <p><label>Мужской<input type = "radio" name ="sex"  value = "male" id="male-field-edit" required></label>
+                                        <label>Женский<input type = "radio" name ="sex" value = "female" id="female-feld-edit" required></label>  </p>
+                                        <p><input name="about-me" placeholder="Образование" type="text" id ="about-me-edit" >
+                                        <input name="work" placeholder="Работа" type="text" id ="work-edit" ></p>
+                                        <p><input name="vk" placeholder="Вконтакте" type="text" id ="vk-edit" >
+                                        <input name="city" placeholder="Город" type="text" id ="city-edit" ></p>          
+                                        <p><input name="mail" placeholder="Почта" type="text" id ="mail-edit">
+                                        <input name="tg" placeholder="Telegram" type="text" id ="tg-edit" ></p>
+
+                                        <br>
                                         <div class="form_label">
                                             <div class="multiselect_block">
                                               <label for="select-1" class="field_multiselect">Чем вы занимаетесь</label>
                                               <input id="checkbox-1" class="multiselect_checkbox" type="checkbox">
                                               <label for="checkbox-1" class="multiselect_label"></label>
                                               <select id="select-1" class="field_select" name="technology" multiple style="@media (min-width: 768px) { height: calc(4 * 38px)}">
-                                                <option value="IT" id ="IT">IT</option>
+                                                    <option value="IT" id ="IT">IT</option>
                                                     <option value="Аналитика" id ="Analytic">Аналитика</option>
-                                                    <option value="Architecture">Архитектура</option>
-                                                    <option value="Design">Дизайн</option>
-                                                    <option value="Journalism">Журналистика</option>
-                                                    <option value=" Engineering">Инженерное Дело</option>
-                                                    <option value="Art">Искусство</option>
-                                                    <option value="History">История</option>
-                                                    <option value="Culture">Культура</option>    
-                                                    <option value="Linguistics">Лингвистика</option>
-                                                    <option value="Marketing">Маркетинг</option>
-                                                    <option value="Medicine">Медицина</option>
-                                                    <option value="science">Наука</option>
-                                                    <option value="Pedagogy">Педагогика</option>
-                                                    <option value="Advertising">Реклама</option>
-                                                    <option value="Construction">Строительство</option>
-                                                    <option value="Fundamental-education">Фундаментальное образование</option>
-                                                    <option value="Economy">Экономика</option>
+                                                    <option value="Архитектура">Архитектура</option>
+                                                    <option value="Дизайн">Дизайн</option>
+                                                    <option value="Журналистика">Журналистика</option>
+                                                    <option value=" Инженерное Дело">Инженерное Дело</option>
+                                                    <option value="Искусство">Искусство</option>
+                                                    <option value="История">История</option>
+                                                    <option value="Культура">Культура</option>    
+                                                    <option value="Лингвистика">Лингвистика</option>
+                                                    <option value="Маркетинг">Маркетинг</option>
+                                                    <option value="Медицина">Медицина</option>
+                                                    <option value="Наука">Наука</option>
+                                                    <option value="Педагогика">Педагогика</option>
+                                                    <option value="Реклама">Реклама</option>
+                                                    <option value="Строительство">Строительство</option>
+                                                    <option value="Фундаментальное образование">Фундаментальное образование</option>
+                                                    <option value="Экономика">Экономика</option>
                                               </select>
                                               <script>
                                                 
@@ -96,7 +98,7 @@
                                                     })
                                                 })
                                               </script>
-                                              <!-- скрипт который делает список выпадающий пиздатый-->
+                                              <!-- скрипт который делает список выпадающий пиздатый- https://habr.com/ru/articles/564844/ -->
                                               <span class="field_multiselect_help">Для выбора нескольких значений зажмите <b>Ctrl(или Command) и нажмите на элемент</b> </span>
                                             </div>
                                             <span class="error_text"></span>
@@ -121,7 +123,8 @@
                             });
                     </script>
                     <!-- скрипт который кнопку редактировать делает еще надо чтоб это окно формы ебучеее закрывалось например на  Esc и при отправке тоже закрывалось
-                        если на чужом профиле то вместо кнопки редактировать кнопка отписаться/отписаться -->
+                        если на чужом профиле то вместо кнопки редактировать кнопка отписаться/отписаться 
+                    https://ru.stackoverflow.com/questions/985567/html-%D0%9F%D1%80%D0%B8-%D0%BD%D0%B0%D0%B6%D0%B0%D1%82%D0%B8%D0%B8-%D0%BD%D0%B0-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D1%83-%D0%B2%D1%81%D0%BF%D0%BB%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D1%84%D0%BE%D1%80%D0%BC%D0%B0-->
                     
                 </div>   
                 
@@ -274,7 +277,10 @@
                                     });
                                 </script>
                             </form>                   
-                              <div class = "files-list-item">
+
+
+
+                            <div class = "files-list-item">
                                 <p class = "file-item">
                                     <span class = "file-name" id ="file-name">Имя Файла</span>
                                     <button class = "delete-file" id ="delete-file">Удалить файл</button>
@@ -286,10 +292,14 @@
                             </div>
                         </div>
                     </div>
-                </div>              
+                </div>
+
+                
             </section>
         </main>  
     </body>
     <footer>
     </footer>       
+
     <script>
+
