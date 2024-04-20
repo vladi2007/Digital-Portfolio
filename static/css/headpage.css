@@ -1,10 +1,15 @@
 html {
     margin: 0 5%;
-    
-}
+   display: flex;
+   justify-content: center;
+   flex-wrap:wrap; 
+
+
+
+}   
 
 .row{
-     width: 100%;  
+    width: 1360px;    
     display: flex;
     justify-content: space-between;
     flex-wrap:wrap; 
@@ -12,10 +17,10 @@ html {
     line-height: 20px;;     
 }
 
-
-.main-header{ position: sticky;
-    top:10px;
+.main-info-3 > div{
+    margin-top:20px;
 }
+
 
 .row > a {
     padding: 5px 15px;;
@@ -48,44 +53,44 @@ a{
 }
 
 body {
-     background: url("/static/phone/phone.jpg") no-repeat center center fixed;
+     background: url("phone.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;   
 }
 
-.main-info-1{
-    margin-top: -80px;;
-
+.main-info-1{height: 650px;
+  
+    margin-top: -85px;
     width: 100%;
     border-radius: 4px;;
     background-color: #FBCD80;
-    height:100%;
+
 
 }
 
-.main-info-2{
+.main-info-2{height: 650px;
     width: 100%;
     border-radius: 4px;;
-    margin-top:115px;
+
     background-color: #FBCD80;
-    height:100%;
+
     
 }
 
-.main-info-3{
+.main-info-3{height: 650px;
     width: 100%;
     border-radius: 4px;;
-    margin-top:110px;
+    
     background-color: #FBCD80;
-    height:100%;
+
     margin-bottom: 10px;;
 }
 
 .head-1 {font-size: 110px;;
     font-family: "Arial";
-    padding-top: 30px;;
+    padding-top: 3  px;;
     overflow-wrap: break-word; 
     padding-left: 20px;; 
 }
@@ -146,7 +151,8 @@ body {
     height: 60%;
 }
 
+.main-info-3 > div{}
 
 footer{
-    margin-top: 90px;;
+    margin-bottom: 20px;;
 }
