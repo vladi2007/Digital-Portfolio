@@ -306,11 +306,30 @@ footer{
    margin-top:-50px;
    margin-right:20px;
 }
+
+
+.edit-main-info{
+   text-align: center;
+   font-size:28px;
+   }
+
+.edit-other-info{font-size:28px;
+   text-align: center;
+}
 #blablabla {
-   display: none;
+   display: inline-block;
    animation-duration: 1.5s;
    animation-fill-mode: both;
    animation-name: fadeIn;
+ }
+
+ #form-1{
+   display: inline-block;
+   margin-top:-30px;
+
+ }
+ #form{
+   display:inline-block;
  }
  
  #blablabla.open {
@@ -448,7 +467,8 @@ footer{
  
  .multiselect_block {
    position: relative;
-   width: 100%;
+   width: 490px;
+   margin-top: 60px;;
  }
  
  .field_select {
@@ -488,6 +508,7 @@ footer{
    border-radius: 4px;
    margin-right: 9px;
    margin-bottom: 10px;
+   margin-top:20px;
  }
  .field_multiselect button:hover, .field_multiselect button:focus {
    background-color: #dbd1ee;
