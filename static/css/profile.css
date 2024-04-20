@@ -55,7 +55,7 @@ body {
 .main-info-1{
    border-radius: 8px;;
    margin-top: 25px;;
-   width: 100%;   
+   width: 1360px;  
    height: 100%;
    background-color: #FBCD80;
 }
@@ -88,7 +88,7 @@ body {
    line-height: 50px;;
 }
 
-.about-me-list-item{
+.about-me-list-item{word-break:Break-all;
    line-height: 40px;
 }
 
@@ -115,14 +115,14 @@ body {
    font-size: 28px;
 }
 
-.line-1{
+.line-1{word-break:Break-all;
    display: flex;
    justify-content: center;
    width: 100%;
    margin-top:20px;
 }
 
-.line-2{
+.line-2{word-break:Break-all;
    margin-top:20px;
    display: flex;
    justify-content: center;
@@ -188,7 +188,7 @@ ul{
 .main-info-2{
    border-radius: 8px;;
    margin-top: 25px;;
-   width: 100%;   
+   width: 1360px;  
    height: 720px;;
    background-color: #FBCD80;
 }
@@ -207,7 +207,7 @@ ul{
    color: #FFFFFF;
    background-color: #19272A ;
    height: 680px;;
-   width: 400px;;
+   width: 440px;;
    font-size: 24px;
    margin-top:20px;
 }
@@ -235,7 +235,7 @@ ul{
 
 .files{
 
-   width: 100%;
+   width: 300px;;
 
    margin-left:20px;
 
@@ -246,7 +246,7 @@ ul{
    color: #FFFFFF;
    background-color: #19272A ;
    height: 680px;;
-   width: 920px;;
+   width: 860px;;
 
    margin-top:20px;
 }
@@ -268,21 +268,21 @@ color:#000;padding: 10px;
 margin-top:48.5px;  margin-left:12px; border-radius: 4px;;
 }
 
-.files-list-item{display: inline-block;
+.files-list-item{display: inline-block;word-break:Break-all;
 
 }
 
 .file-item{
    font-size: 24px;background-color: #FBCD80;;;color:#000;border-radius: 4px;;padding: 10px;;margin-top: 14px;;
    margin-left:20px;
-   width: 860px;;
+   width: 800px;;word-break:Break-all;
 }
 
 #clear{
    background-color: #FBCD80;;
 font-size: 24px;
 color:#000;padding: 10px;border-radius: 4px;
-margin-left:70px;
+margin-left:10px;
 margin-top: -2px;;
 }
 .delete-file{
