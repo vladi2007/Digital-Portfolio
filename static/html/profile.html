@@ -21,11 +21,13 @@
                 <a href = "#" 
                     class="nav-link-4" id ="link-4"><nobr>Выйти</nobr></a>                                       
         </header>
+
         <main>
             <section class = "main-info-1">
                 <div>                  
-                    <img class = "avatar" src ="/static/image/login.jpg" id = "profile-avatar" style="height: 120px; width: 120px;">
+                    <img class = "avatar" src ="login.jpg" id = "profile-avatar" style="height: 120px; width: 120px;">
                     <span class = "name" id = "name">Имя Фамилия</span>
+                    
                     <div id="feedback">
                         <button class ="edit-file">Редактировать профиль</button>
                         <div class="popup">
@@ -38,16 +40,12 @@
                                         <input name="surname" placeholder="Фамилия" type="text" id ="surname-edit" ></p>
                                         <p>Дата рождения <input name="date"  type="date" id ="date-edit" ></p>
                                         <p><label>Мужской<input type = "radio" name ="sex"  value = "male" id="male-field-edit" required></label>
-                                        <label>Женский<input type = "radio" name ="sex" value = "female" id="female-feld-edit" required></label>  </p>
+                                        <label>Женский<input type = "radio" name ="sex" value = "female" id="female-feld-edit" required></label> 
                                         <input name="city" placeholder="Город" type="text" id ="city-edit" ></p>          
                                         <button class = "last" type ="submit" id ="send-main-data-profile" >Сохранить</button>
                                     </form>
                                     <p class ="edit-other-info">Редактирование остальной информации</p>
                                     <form   method="post" id ="form-2">
-                                        <p><input name="about-me" placeholder="Образование" type="text" id ="about-me-edit" >
-                                        <input name="work" placeholder="Работа" type="text" id ="work-edit" ></p>
-                                        <p><input name="vk" placeholder="Вконтакте" type="text" id ="vk-edit" >
-                                        <input name="tg" placeholder="Telegram" type="text" id ="tg-edit" ></p>
                                         <div class="form_label">
                                             <div class="multiselect_block">
                                               <label for="select-1" class="field_multiselect">Чем вы занимаетесь</label>
@@ -73,8 +71,13 @@
                                                     <option value="Фундаментальное образование" id ="Fundamental-education">Фундаментальное образование</option>
                                                     <option value="Экономика" id ="Economy">Экономика</option>
                                               </select>
-                                              <script>                                           
-                                                let multiselect_block1 = document.querySelectorAll(".multiselect_block");
+                                              
+                                              <span class="field_multiselect_help">Для выбора нескольких значений зажмите <b>Ctrl(или Command) и нажмите на элемент</b> </span>
+                                            </div>
+                                            <span class="error_text"></span>
+                                            <script>
+                                                
+                                                let multiselect_block = document.querySelectorAll(".multiselect_block");
                                                 multiselect_block.forEach(parent => {
                                                     let label = parent.querySelector(".field_multiselect");
                                                     let select = parent.querySelector(".field_select");
@@ -98,17 +101,23 @@
                                                 })
                                               </script>
                                               <!-- скрипт который делает список выпадающий пиздатый- https://habr.com/ru/articles/564844/ -->
-                                              <span class="field_multiselect_help">Для выбора нескольких значений зажмите <b>Ctrl(или Command) и нажмите на элемент</b> </span>
-                                            </div>
-                                            <span class="error_text"></span>
                                         </div>
-                                        <button class = "last" type ="submit" id ="send-other-data-profile" >Сохранить</button>
+                                        <p><input name="about-me" placeholder="Образование" type="text" id ="about-me-edit" >
+                                        <input name="work" placeholder="Работа" type="text" id ="work-edit" ></p>
+                                        <p><input name="vk" placeholder="Вконтакте" type="text" id ="vk-edit" >
+                                        <input name="tg" placeholder="Telegram" type="text" id ="tg-edit" ></p>
+                                        
+                                        <br>
+                                        <button class = "last-2" type ="submit" id ="send-other-data-profile" >Сохранить</button>
                                     </form>
+
+                                    
                                 </div>
                               </div>
                             </div>
                           </div>
                     </div>
+
                     <script>
                         const button = document.querySelector('button');
                             const form = document.querySelector('#blablabla');
@@ -121,8 +130,10 @@
                     </script>
                     <!-- скрипт который кнопку редактировать делает еще надо чтоб это окно формы ебучеее закрывалось например на  Esc и при отправке тоже закрывалось
                         если на чужом профиле то вместо кнопки редактировать кнопка отписаться/отписаться 
-                    https://ru.stackoverflow.com/questions/985567/html-%D0%9F%D1%80%D0%B8-%D0%BD%D0%B0%D0%B6%D0%B0%D1%82%D0%B8%D0%B8-%D0%BD%D0%B0-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D1%83-%D0%B2%D1%81%D0%BF%D0%BB%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D1%84%D0%BE%D1%80%D0%BC%D0%B0-->      
-                </div>         
+                    https://ru.stackoverflow.com/questions/985567/html-%D0%9F%D1%80%D0%B8-%D0%BD%D0%B0%D0%B6%D0%B0%D1%82%D0%B8%D0%B8-%D0%BD%D0%B0-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D1%83-%D0%B2%D1%81%D0%BF%D0%BB%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D1%84%D0%BE%D1%80%D0%BC%D0%B0-->
+                    
+                </div>   
+                
                 <div class="line-1"><div class ="about-me">
                     <ul class ="about-me-list"><span class ="header">Обо мне:</span>
                         <li class = "about-me-list-item" id ="education">Город:</li>
@@ -133,6 +144,7 @@
                         <li class = "about-me-list-item" id ="work">Работа:</li>
                     </ul>
                 </div>
+                
                 <div class ="Subscriptions">
                     <ul class ="Subscriptions-list"><a class = "go-to-Subscriptions-page" href ="#"><span class ="header">Подписки:</span> </a><span class ="header" id ="Subscriptions-count">0</span>
                         <div class = "Subscribers-list">
