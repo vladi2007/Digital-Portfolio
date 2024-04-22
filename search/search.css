@@ -1,4 +1,178 @@
 
+/*! начало*/
+.form_label {
+    display: flex;
+    flex-direction: column;
+}
+
+.multiselect_block {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.field_multiselect {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid #cdd6f3;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 12px 40px 10px 16px;
+  font-size: 14px;
+  outline-color: #cdd6f3;
+}
+
+.form_label input::placeholder,
+.field_multiselect::placeholder {
+  color: #a8acc9;
+}
+
+.form_label input:hover,
+.field_multiselect:hover {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.16);
+}
+
+.form_label input:focus,
+.field_multiselect:focus {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.16);
+}
+
+.field_multiselect_help {
+  position: absolute;
+  max-width: 100%;
+  background-color: #fff;
+  top: -48px;
+  left: 0;
+  opacity: 0;
+}
+
+.form_label input.error {
+  border-color: #eb5757;
+}
+
+.error_text {
+  color: #eb5757;
+}
+
+.field_multiselect {
+  padding-right: 60px;
+}
+.field_multiselect:after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 15px;
+  width: 6px;
+  height: 16px;
+  background: url("data:image/svg+xml,%3Csvg width='6' height='16' viewBox='0 0 6 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 0L6 5H0L3 0Z' fill='%23A8ACC9'/%3E%3Cpath d='M3 16L6 11H0L3 16Z' fill='%23A8ACC9'/%3E%3C/svg%3E") 50% 50% no-repeat;
+}
+
+.multiselect_block {
+  position: relative;
+  width: 100%;
+}
+
+.field_select {
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 0;
+  width: 100%;
+  border: 2px solid #cdd6f3;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  box-sizing: border-box;
+  outline-color: #cdd6f3;
+  z-index: 6;
+}
+
+.field_select[multiple] {
+  overflow-y: auto;
+}
+
+.field_select option {
+  display: block;
+  padding: 8px 16px;
+  width: calc(370px - 32px);
+  cursor: pointer;
+}
+.field_select option:checked {
+  background-color: #eceff3;
+}
+.field_select option:hover {
+  background-color: #d5e8fb;
+}
+
+.field_multiselect button {
+  position: relative;
+  padding: 7px 34px 7px 8px;
+  background: #ebe4fb;
+  border-radius: 4px;
+  margin-right: 9px;
+  margin-bottom: 10px;
+}
+.field_multiselect button:hover, .field_multiselect button:focus {
+  background-color: #dbd1ee;
+}
+.field_multiselect button:after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  width: 16px;
+  height: 16px;
+  background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.4958 6.49499C19.7691 6.22162 19.7691 5.7784 19.4958 5.50504C19.2224 5.23167 18.7792 5.23167 18.5058 5.50504L12.5008 11.5101L6.49576 5.50504C6.22239 5.23167 5.77917 5.23167 5.50581 5.50504C5.23244 5.7784 5.23244 6.22162 5.50581 6.49499L11.5108 12.5L5.50581 18.505C5.23244 18.7784 5.23244 19.2216 5.50581 19.495C5.77917 19.7684 6.22239 19.7684 6.49576 19.495L12.5008 13.49L18.5058 19.495C18.7792 19.7684 19.2224 19.7684 19.4958 19.495C19.7691 19.2216 19.7691 18.7784 19.4958 18.505L13.4907 12.5L19.4958 6.49499Z' fill='%234F5588'/%3E%3C/svg%3E") 50% 50% no-repeat;
+  background-size: contain;
+}
+
+.multiselect_label {
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.field_select {
+  display: none;
+}
+
+input.multiselect_checkbox {
+  
+  width: 100%;
+  height: 100%;
+  border: none;
+  opacity: 0;
+}
+
+.multiselect_checkbox:checked ~ .field_select {
+  display: block;
+}
+
+.multiselect_checkbox:checked ~ .multiselect_label {
+  width: 40px;
+  left: initial;
+  right: 4px;
+  background: #ffffff url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.4958 6.49499C19.7691 6.22162 19.7691 5.7784 19.4958 5.50504C19.2224 5.23167 18.7792 5.23167 18.5058 5.50504L12.5008 11.5101L6.49576 5.50504C6.22239 5.23167 5.77917 5.23167 5.50581 5.50504C5.23244 5.7784 5.23244 6.22162 5.50581 6.49499L11.5108 12.5L5.50581 18.505C5.23244 18.7784 5.23244 19.2216 5.50581 19.495C5.77917 19.7684 6.22239 19.7684 6.49576 19.495L12.5008 13.49L18.5058 19.495C18.7792 19.7684 19.2224 19.7684 19.4958 19.495C19.7691 19.2216 19.7691 18.7784 19.4958 18.505L13.4907 12.5L19.4958 6.49499Z' fill='%234F5588'/%3E%3C/svg%3E") 50% 50% no-repeat;
+}
+
+.multiselect_checkbox:checked ~ .field_multiselect_help {
+  opacity: 1;
+}
+/*! конец*/
+
+.search-input-form {
+    display: block;
+    width: 650px;
+    padding-top: auto;
+    padding-bottom: auto;
+    height: 48px;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: #FBCD80;
+    font-weight: 500;
+    font-size: 16px;
+    border: 0;
+    border-radius: 0;
+} 
 
 html {
     margin: 0 5%;
@@ -222,7 +396,8 @@ p {
 
 .search-input {
     align-self: center;
-    display: block;
+    display: flex;
+    flex-direction: row;
     width: 757px;
     height: 48px;
     box-sizing: border-box;

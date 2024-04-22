@@ -23,7 +23,33 @@
 </header>
 
 <main>
-    <input type ="text" name="search" id="mail-field" placeholder="Поиск" class="search-input">
+    <div class="search-input">
+        <input type ="text" name="search" id="mail-field" placeholder="Поиск" class="search-input-form">
+        <div class="multiselect_block">
+            <input id="checkbox-1" class="multiselect_checkbox" type="checkbox">
+            <label for="checkbox-1" class="multiselect_label"></label>
+            <select id="select-1" class="field_select" name="technology" multiple style="@media (width: 757px) { height: calc(4 * 38px)}">
+              <option value="all">IT</option>
+              <option value="HTML">Экономика</option>
+              <option value="CSS">Аналитика</option>
+              <option value="JavaScript">Юриспруденция</option>
+            </select>
+          </div>
+    </div>
+    <div class="form_label">
+        <div class="multiselect_block">
+          <label for="select-1" class="field_multiselect search-input">Поиск</label>
+          <input id="checkbox-1" class="multiselect_checkbox" type="checkbox">
+          <label for="checkbox-1" class="multiselect_label"></label>
+          <select id="select-1" class="field_select" name="technology" multiple style="@media (min-width: 768px) { height: calc(4 * 38px)}">
+            <option value="all">IT</option>
+            <option value="HTML">Экономика</option>
+            <option value="CSS">Аналитика</option>
+            <option value="JavaScript">Юриспруденция</option>
+          </select>
+        </div>
+        <span class="error_text"></span>
+    </div>
     <ul class="list">
         <li class="el">
             <a class="user-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image/IMG_20240317_170456.jpg" class="avatar" id="ava-1">
@@ -39,5 +65,6 @@
         </li>
     </ul>
 </main>
+<script src = "MultiselectField.js"></script>
 </body>
 </html>
