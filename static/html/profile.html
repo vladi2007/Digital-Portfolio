@@ -51,7 +51,7 @@
                                               <label for="select-1" class="field_multiselect">Чем вы занимаетесь</label>
                                               <input id="checkbox-1" class="multiselect_checkbox" type="checkbox">
                                               <label for="checkbox-1" class="multiselect_label"></label>
-                                              <select id="select-1" class="field_select" name="technology" multiple style="@media (min-width: 768px) { height: calc(4 * 38px)}">
+                                              <select id="select-1" class="field_select" name="technology" multiple style="@media (min-width: 768px) { height: calc(2    * 38px)}">
                                                     <option value="IT" id ="IT">IT</option>
                                                     <option value="Аналитика" id ="Analytic">Аналитика</option>
                                                     <option value="Архитектура" id ="Architecture">Архитектура</option>
@@ -106,25 +106,15 @@
                                         <input name="work" placeholder="Работа" type="text" id ="work-edit" ></p>
                                         <p><input name="vk" placeholder="Вконтакте" type="text" id ="vk-edit" >
                                         <input name="tg" placeholder="Telegram" type="text" id ="tg-edit" ></p>
-                                        
+                                        <p><input name="mail" placeholder="Почта" type="text" id ="mail-edit" ></p>
                                         <br>
                                         <button class = "last-2" type ="submit" id ="send-other-data-profile" >Сохранить</button>
                                     </form>
-
-                                    <p class ="edit-other-info">Обновление фотографии</p>
-                                    <form enctype="multipart/form-data" method="post" id ="form-3">
-                     
-                                        <input type = "file" name = "file" id ="control" multiple="multiple" accept=".jpg, .jpeg, .png">
-                                        <input type ="submit" value ="Отправить" id="send-file" accept="image/*">
-                                    </form>
-
-                                    
                                 </div>
                               </div>
                             </div>
                           </div>
                     </div>
-
                     <script>
                         const button = document.querySelector('button');
                             const form = document.querySelector('#blablabla');
@@ -135,10 +125,6 @@
                             popup.classList.add('popup_open');
                             });
                     </script>
-                    <!-- скрипт который кнопку редактировать делает еще надо чтоб это окно формы ебучеее закрывалось например на  Esc и при отправке тоже закрывалось
-                        если на чужом профиле то вместо кнопки редактировать кнопка отписаться/отписаться 
-                    https://ru.stackoverflow.com/questions/985567/html-%D0%9F%D1%80%D0%B8-%D0%BD%D0%B0%D0%B6%D0%B0%D1%82%D0%B8%D0%B8-%D0%BD%D0%B0-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D1%83-%D0%B2%D1%81%D0%BF%D0%BB%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D1%84%D0%BE%D1%80%D0%BC%D0%B0-->
-                    
                 </div>   
                 
                 <div class="line-1"><div class ="about-me">
@@ -261,58 +247,46 @@
 
                     <div class = "files">
                         <div class = "files-list">
-                            <form enctype="multipart/form-data" method="post">
-                                <p class = "buttons-file" style ="text-wrap: nowrap;">
-                                    <label for ="control" class = "custom-button-load">Добавить файлы</label>  
-                                    <input type = "file" name = "file" id ="control" style="visibility:hidden;" multiple="multiple">
-                                    <button id="clear">Отмена</button>
-                                    <label for="send-file" class = "custom-button-send">Отправить</label> 
-                                    <input type ="submit" value ="Отправить" id="send-file" style="visibility:hidden;">
-                                    <!--кнопка отправить и отмена по умолчанию должны быть скрыты display:none, а появляться по нажатию кнопки добавить файлы!
-                                    https://sky.pro/wiki/html/kak-nastroit-knopku-i-tekst-v-input-type-file-v-html/ вот тут гайды по джаве как это отправлять
-                                и еще надо отображать имя элемента залитого там есть про это
-
-                                и еще добавил очистку залитого файла здесь брал
-                                 https://ru.stackoverflow.com/questions/1208393/%D0%9A%D0%B0%D0%BA-%D1%83%D0%B4%D0%B0%D0%B
-                                B%D0%B8%D1%82%D1%8C-%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D1%83%D0%B6%D0%B5-
-                                %D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D0%BB-%D0%B2-%D0%B8%D0%BD%D0%BF%D1%83%D1%82%D0%B5 -->
-                                </p>
-                                <script>
-                                    let control = document.querySelector("#control"),
-                                        clearBn = document.querySelector("#clear");
-
-                                    // Событие по клику на кнопку
-                                    clearBn.addEventListener("click", function(){
-                                    control.value = '';
-                                    let newControl = control.cloneNode( true )
-                                    control.replaceWith( newControl );
-                                    control = newControl;
+                            <div id="feedback">
+                                <button class ="load-file">Добавить файл</button>
+                                <div class="popup-1">
+                                    <div class="popup__container">
+                                      <div class="popup__wrapper">
+                                        <div id="form-avatar">    
+                                            <p class ="edit-main-info">Добавление файла</p>
+                                            <form  method="post" id ="file-form">
+                                                <input type = "file" name = "file" id ="control" multiple="multiple" accept=".jpg, .jpeg, .png">
+                                                <input type ="submit" value ="Отправить" id="send-file" accept=".jpg, .jpeg, .png">
+                                            </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                const button1 = document.querySelector('.load-file');
+                                    const form1 = document.querySelector('#file-form');
+                                    const popup1 = document.querySelector('.popup-1');
+        
+                                    button1.addEventListener('click', () => {
+                                    form1.classList.add('open');
+                                    popup1.classList.add('popup_open');
                                     });
-                                </script>
-                            </form>                   
 
-
-
+                            </script>
                             <div class = "files-list-item">
                                 <p class = "file-item">
                                     <span class = "file-name" id ="file-name">Имя Файла</span>
                                     <button class = "delete-file" id ="delete-file">Удалить файл</button>
                                     <!--тут надо сделать чтоб удалялся файл, я хз как с моей стороный это сделать, что мне отправлять в форме, поэтому
                                     кнопку сделал-->
-
                                 </p>
-
                             </div>
                         </div>
                     </div>
-                </div>
-
-                
+                </div>             
             </section>
         </main>  
     </body>
     <footer>
     </footer>       
-
-    <script>
-
