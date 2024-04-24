@@ -9,24 +9,39 @@
     <body>
         <header class ="main-header">
             <div class ="row">
-                <a href = "#" 
+                <a href = "/" 
                     class="nav-link-1" id ="link-1"><nobr>Лого</nobr></a>
-                <a href = "#" 
+                <a href = "/my_profile" 
                         class="nav-link-2" id ="link-2"><nobr>Моя страница</nobr></a>
                 <a href = "#" 
                     class="nav-link-3" id ="link-3"><nobr>Поиск</nobr></a>                           
                         <!--Вот тут если не авторизированный пользователь, то вторая ссылка пропадает display:none, в третьей текст меняется на "Вход"
                         и добавляется margin-left: calc(50% - 130px);, у в четвертой текст меняется на "Регистрация" и соответственно ссылки меняются
                         все это по класссам и айдишникам джавой -->
-                <a href = "#" 
-                    class="nav-link-4" id ="link-4"><nobr>Выйти</nobr></a>                                       
+                <a href = "/auth/logout" 
+                    class="nav-link-4" id ="link-4"><nobr>Выйти</nobr></a>
+                <script>
+                    document.getElementById("link-4").addEventListener("click", function(event) {
+                        event.preventDefault();
+                        fetch("/auth/logout", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json"
+                          }
+                        })});
+                </script>
+                                                             
         </header>
 
         <main>
             <section class = "main-info-1">
                 <div>                  
                     <img class = "avatar" src ="/static/login.jpg" id = "profile-avatar" style="height: 120px; width: 120px;">
-                    <span class = "name" id = "name">Имя Фамилия</span>
+                    <div  id = "user-name"> 
+                        <span  id = "first_name">Имя</span> 
+                        <span  id = "last_name">Фамилия</span> 
+                    </div>
+
                     
                     <div id="feedback">
                         <button class ="edit-file">Редактировать профиль</button>
@@ -102,11 +117,11 @@
                                               </script>
                                               <!-- скрипт который делает список выпадающий пиздатый- https://habr.com/ru/articles/564844/ -->
                                         </div>
-                                        <p><input name="about-me" placeholder="Образование" type="text" id ="about-me-edit" >
+                                        <p><input name="education" placeholder="Образование" type="text" id ="about-me-edit" >
                                         <input name="work" placeholder="Работа" type="text" id ="work-edit" ></p>
                                         <p><input name="vk" placeholder="Вконтакте" type="text" id ="vk-edit" >
                                         <input name="tg" placeholder="Telegram" type="text" id ="tg-edit" ></p>
-                                        <p><input name="mail" placeholder="Почта" type="text" id ="mail-edit" ></p>
+                                        <!-- <p><input name="mail" placeholder="Почта" type="text" id ="mail-edit" ></p> -->
                                         <br>
                                         <button class = "last-2" type ="submit" id ="send-other-data-profile" >Сохранить</button>
                                     </form>
@@ -116,14 +131,18 @@
                           </div>
                     </div>
                     <script>
-                        const button = document.querySelector('button');
-                            const form = document.querySelector('#blablabla');
-                            const popup = document.querySelector('.popup');
-
-                            button.addEventListener('click', () => {
-                            form.classList.add('open');
-                            popup.classList.add('popup_open');
-                            });
+                        const editButton = document.querySelector('.edit-file'); 
+                        const form = document.querySelector('#blablabla'); 
+                        const popup = document.querySelector('.popup'); 
+                        editButton.addEventListener('click', () => { 
+                        form.classList.add('open'); 
+                        popup.classList.add('popup_open'); 
+                        }); 
+                        popup.addEventListener('click', (event) => { 
+                        if (!form.contains(event.target)) { 
+                            form.classList.remove('open'); 
+                            popup.classList.remove('popup_open'); 
+                        }});
                     </script>
                 </div>   
                 
@@ -247,7 +266,7 @@
 
                     <div class = "files">
                         <div class = "files-list">
-                            <div id="feedback">
+                            <div id="feedback-2">
                                 <button class ="load-file">Добавить файл</button>
                                 <div class="popup-1">
                                     <div class="popup__container">
@@ -286,7 +305,10 @@
                     </div>
                 </div>             
             </section>
-        </main>  
+        </main> 
+        <script src="/static/js/profileGetInfo.js"></script> 
+        <script src="/static/js/profileSendProfInfo.js"></script>
+        <script src="/static/js/profileControler.js"></script>
     </body>
     <footer>
     </footer>       

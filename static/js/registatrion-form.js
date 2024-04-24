@@ -3,7 +3,7 @@
 const password = document.getElementById('password-field');
 const checkPassword = document.querySelector('.show-password');
 const passwordMessage = document.querySelector('.passwordMessage');
-const form = document.getElementById('registration-form');
+form = document.getElementById('registration-form');
 
 //check validity form
 form.addEventListener('input', checkValidity)

@@ -1,6 +1,6 @@
 // check validity of form
 
-const form = document.getElementById('entrance-form');
+// const form = document.getElementById('entrance-form');
 const checkPassword = document.querySelector('.show-password');
 const password = document.getElementById('password-field');
 
