@@ -37,9 +37,8 @@ function checkOwnerProfile(){
 
     fetch("/is_my_profile/" + number)
     .then(response => {
-        if (response.status == 200 ){
-            if (!response)
-                changeStyle();
+        if (response.status == 200){
+            return response.json();
         }
         else {
             let link2 = document.getElementById("link-2");
@@ -54,7 +53,11 @@ function checkOwnerProfile(){
             changeStyle()
         }
     })
-}
+    .then(data => {
+        if (!data) {
+            changeStyle();
+        }})
+    }
 
 function changeStyle(){
     
