@@ -37,12 +37,10 @@
             <section class = "main-info-1">
                 <div>                  
                     <img class = "avatar" src ="/static/image/login.jpg" id = "profile-avatar" style="height: 120px; width: 120px;">
-                    <div  id = "user-name"> 
-                        <span  id = "first_name">Имя</span> 
-                        <span  id = "last_name">Фамилия</span> 
-                    </div>
-
                     
+                    <span class ="name" id = "first_name">Имя</span> 
+                    <span class ="name" id = "last_name">Фамилия</span> 
+                   
                     <div id="feedback">
                         <button class ="edit-file">Редактировать профиль</button>
                         <div class="popup">
@@ -121,7 +119,7 @@
                                         <input name="work" placeholder="Работа" type="text" id ="work-edit" ></p>
                                         <p><input name="vk" placeholder="Вконтакте" type="text" id ="vk-edit" >
                                         <input name="tg" placeholder="Telegram" type="text" id ="tg-edit" ></p>
-                                        <!-- <p><input name="mail" placeholder="Почта" type="text" id ="mail-edit" ></p> -->
+                                        <p><input name="mail" placeholder="Почта для связи" type="text" id ="mail-edit" ></p>
                                         <br>
                                         <button class = "last-2" type ="submit" id ="send-other-data-profile" >Сохранить</button>
                                     </form>
@@ -298,7 +296,8 @@
                                     <span class = "file-name" id ="file-name">Имя Файла</span>
                                     <button class = "delete-file" id ="delete-file">Удалить файл</button>
                                     <!--тут надо сделать чтоб удалялся файл, я хз как с моей стороный это сделать, что мне отправлять в форме, поэтому
-                                    кнопку сделал-->
+                                    кнопку сделал
+                                    тут в теории можно каждому файлу class = "file-item" навешивать айдишник и с ним работать-->
                                 </p>
                             </div>
                         </div>
