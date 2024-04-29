@@ -18,17 +18,19 @@
                         <!--Вот тут если не авторизированный пользователь, то вторая ссылка пропадает display:none, в третьей текст меняется на "Вход"
                         и добавляется margin-left: calc(50% - 130px);, у в четвертой текст меняется на "Регистрация" и соответственно ссылки меняются
                         все это по класссам и айдишникам джавой -->
-                <a href = "/auth/logout" 
+                <a href = "" 
                     class="nav-link-4" id ="link-4"><nobr>Выйти</nobr></a>
                 <script>
                     document.getElementById("link-4").addEventListener("click", function(event) {
-                        event.preventDefault();
+                        // event.preventDefault();
                         fetch("/auth/logout", {
                           method: "POST",
                           headers: {
                             "Content-Type": "application/json"
                           }
-                        })});
+                        })
+                        location.reload();
+                    });
                 </script>
                                                              
         </header>
@@ -66,7 +68,7 @@
                                               <label for="select-1" class="field_multiselect">Чем вы занимаетесь</label>
                                               <input id="checkbox-1" class="multiselect_checkbox" type="checkbox">
                                               <label for="checkbox-1" class="multiselect_label"></label>
-                                              <select id="select-1" class="field_select" name="technology" multiple style="@media (min-width: 768px) { height: calc(2    * 38px)}">
+                                              <select id="select-1" class="field_select" name="technology" multiple required style="@media (min-width: 768px) { height: calc(2    * 38px)}">
                                                     <option value="IT" id ="IT">IT</option>
                                                     <option value="Аналитика" id ="Analytic">Аналитика</option>
                                                     <option value="Архитектура" id ="Architecture">Архитектура</option>
@@ -179,8 +181,8 @@
                         <li class = "about-me-list-item">Род деятельности: <span id ="technology"></span></li>
                         <li class = "about-me-list-item">Дата рождения: <span id ="birth_date"></span></li>
                         <li class = "about-me-list-item">Пол: <span id ="sex">female</span></li>
-                        <li class = "about-me-list-item">Образование:<span id ="education"></span></li>
-                        <li class = "about-me-list-item">Работа:<span id ="work"></span></li>
+                        <li class = "about-me-list-item">Образование: <span id ="education"></span></li>
+                        <li class = "about-me-list-item">Работа: <span id ="work"></span></li>
                     </ul>
                 </div>
                 
@@ -189,12 +191,12 @@
                         <div class = "Subscribers-list">
                             <li class = "Subscribers-list-item">
                                 <a  href = "https://vk.com/miami51"  class = "profiles-href"><img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-1" style="height: 80px; width: 80px;" href="">
-                                <p class = "Subscribers-name" id ="name-1">Имя<br> Фамилия</p></a>
+                                <p class = "Subscribers-name" id ="name-1">Имя<br>Фамилия</p></a>
                             </li>
 
                             <li class = "Subscribers-list-item">
                                 <a href = "https://vk.com/miami51" class = "profiles-href"><img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-2" style="height: 80px; width: 80px;">
-                                <p class = "Subscribers-name" id ="name-2">Имя<br> Фамилия</p></a>
+                                <p class = "Subscribers-name" id ="name-2">Имя<br>Фамилия</p></a>
                             </li>
 
                             <li class = "Subscribers-list-item">
@@ -223,9 +225,9 @@
 
                 <div class ="line-2"><div class ="contacts">
                     <ul class ="contacts-list"><span class ="header">Контакты:</span>
-                        <li class = "contacts-list-item">Вконтакте:<span id ="vk"></span></li>
+                        <li class = "contacts-list-item">Вконтакте: <span id ="vk"></span></li>
                         <li class = "contacts-list-item">Почта: <span id ="email"></span></li>
-                        <li class = "contacts-list-item">Telegram:<span id ="tg"></span></li>
+                        <li class = "contacts-list-item">Telegram: <span id ="tg"></span></li>
                     </ul>
                 </div>
 
