@@ -388,7 +388,7 @@ footer{
    line-height: 20px;;
  }
  
- .popup__wrapper {
+ .popup__wrapper, .popup__wrapper-2 {
    padding: 40px;
  }
 

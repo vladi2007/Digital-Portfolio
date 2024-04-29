@@ -39,8 +39,8 @@
                     <img class = "avatar" src ="/static/image/login.jpg" id = "profile-avatar" style="height: 120px; width: 120px;">
                     
                     <div class = "name"  id = "user-name"> 
-                        <span  id = "first_name">Имя</span> 
-                        <span  id = "last_name">Фамилия</span> 
+                        <span id = "first_name">Имя</span> 
+                        <span id = "last_name">Фамилия</span> 
                     </div>
                    
                     <div id="feedback">
@@ -51,11 +51,11 @@
                                 <div id="blablabla">    
                                     <p class ="edit-main-info">Редактирование главной информации</p>
                                     <form  method="post" id ="form-1">
-                                        <p><input name="name" placeholder="Имя" type="text" id ="name-edit" >
+                                        <p><input name="name" placeholder="Имя" type="text" id ="name-edit">
                                         <input name="surname" placeholder="Фамилия" type="text" id ="surname-edit" ></p>
-                                        <p>Дата рождения <input name="date"  type="date" id ="date-edit" ></p>
+                                        <p>Дата рождения <input name="date"  type="date" id ="date-edit" required></p>
                                         <p><label>Мужской<input type = "radio" name ="sex"  value = "male" id="male-field-edit" required></label>
-                                        <label>Женский<input type = "radio" name ="sex" value = "female" id="female-feld-edit" required></label> 
+                                        <label>Женский<input type = "radio" name ="sex" value = "female" id="female-field-edit" required></label> 
                                         <input name="city" placeholder="Город" type="text" id ="city-edit" ></p>          
                                         <button class = "last" type ="submit" id ="send-main-data-profile" >Сохранить</button>
                                     </form>
@@ -86,7 +86,6 @@
                                                     <option value="Фундаментальное образование" id ="Fundamental-education">Фундаментальное образование</option>
                                                     <option value="Экономика" id ="Economy">Экономика</option>
                                               </select>
-                                              
                                               <span class="field_multiselect_help">Для выбора нескольких значений зажмите <b>Ctrl(или Command) и нажмите на элемент</b> </span>
                                             </div>
                                             <span class="error_text"></span>
@@ -117,11 +116,11 @@
                                               </script>
                                               <!-- скрипт который делает список выпадающий пиздатый- https://habr.com/ru/articles/564844/ -->
                                         </div>
-                                        <p><input name="education" placeholder="Образование" type="text" id ="about-me-edit" >
-                                        <input name="work" placeholder="Работа" type="text" id ="work-edit" ></p>
+                                        <p><input name="education" placeholder="Образование" type="text" id ="education-edit">
+                                        <input name="work" placeholder="Работа" type="text" id ="work-edit"></p>
                                         <p><input name="vk" placeholder="Вконтакте" type="text" id ="vk-edit" >
-                                        <input name="tg" placeholder="Telegram" type="text" id ="tg-edit" ></p>
-                                        <p><input name="mail" placeholder="Почта для связи" type="text" id ="mail-edit" ></p>
+                                        <input name="tg" placeholder="Telegram" type="text" id ="tg-edit"></p>
+                                        <p><input name="email" placeholder="Почта для связи" type="text" id ="mail-edit" ></p>
                                         <br>
                                         <button class = "last-2" type ="submit" id ="send-other-data-profile" >Сохранить</button>
                                     </form>
@@ -132,28 +131,56 @@
                     </div>
                     <script>
                         const editButton = document.querySelector('.edit-file'); 
-                        const form = document.querySelector('#blablabla'); 
+                        const form = document.querySelector('.popup__wrapper'); 
                         const popup = document.querySelector('.popup'); 
+
                         editButton.addEventListener('click', () => { 
-                        form.classList.add('open'); 
-                        popup.classList.add('popup_open'); 
+                            form.classList.add('open'); 
+                            popup.classList.add('popup_open'); 
+
+                            var maleFieldEditInput = document.getElementById("male-field-edit");
+                            var femaleFieldEditInput = document.getElementById("female-field-edit");
+                            
+                            if (document.getElementById("sex").textContent === "male")
+                                maleFieldEditInput.checked = true;
+                            else if (document.getElementById("sex").textContent === "female")
+                                femaleFieldEditInput.checked = true;
+                
+                            var dictionary = {
+                                "education-edit": "education",
+                                "work-edit": "work",
+                                "vk-edit": "vk",
+                                "tg-edit": "tg",
+                                "mail-edit": "email",
+                                "name-edit": "first_name",
+                                "surname-edit": "last_name",
+                                "city-edit": "city"
+                            };
+                            
+                            for (var key in dictionary)
+                            {
+                                var curentObj = document.getElementById(dictionary[key]).textContent;
+                                if (!curentObj.length == 0)
+                                    document.getElementById(key).value = curentObj;
+                            }
                         }); 
+                    
                         popup.addEventListener('click', (event) => { 
-                        if (!form.contains(event.target)) { 
-                            form.classList.remove('open'); 
-                            popup.classList.remove('popup_open'); 
+                            if (!form.contains(event.target)) { 
+                                form.classList.remove('open'); 
+                                popup.classList.remove('popup_open'); 
                         }});
                     </script>
                 </div>   
                 
                 <div class="line-1"><div class ="about-me">
                     <ul class ="about-me-list"><span class ="header">Обо мне:</span>
-                        <li class = "about-me-list-item" id ="education">Город:</li>
-                        <li class = "about-me-list-item" id ="work">Род деятельности:</li>
-                        <li class = "about-me-list-item" id ="birth">Дата рождения:</li>
-                        <li class = "about-me-list-item" id ="sex">Пол:</li>
-                        <li class = "about-me-list-item" id ="education">Образование:</li>
-                        <li class = "about-me-list-item" id ="work">Работа:</li>
+                        <li class = "about-me-list-item">Город: <span id ="city"></span></li>
+                        <li class = "about-me-list-item">Род деятельности: <span id ="technology"></span></li>
+                        <li class = "about-me-list-item">Дата рождения: <span id ="birth_date"></span></li>
+                        <li class = "about-me-list-item">Пол: <span id ="sex">female</span></li>
+                        <li class = "about-me-list-item">Образование:<span id ="education"></span></li>
+                        <li class = "about-me-list-item">Работа:<span id ="work"></span></li>
                     </ul>
                 </div>
                 
@@ -196,9 +223,9 @@
 
                 <div class ="line-2"><div class ="contacts">
                     <ul class ="contacts-list"><span class ="header">Контакты:</span>
-                        <li class = "contacts-list-item" id ="vk">Вконтакте:</li>
-                        <li class = "contacts-list-item" id ="email">Почта:</li>
-                        <li class = "contacts-list-item" id ="tg">Telegram:</li>
+                        <li class = "contacts-list-item">Вконтакте:<span id ="vk"></span></li>
+                        <li class = "contacts-list-item">Почта: <span id ="email"></span></li>
+                        <li class = "contacts-list-item">Telegram:<span id ="tg"></span></li>
                     </ul>
                 </div>
 
@@ -270,7 +297,7 @@
                                 <button class ="load-file">Добавить файл</button>
                                 <div class="popup-1">
                                     <div class="popup__container">
-                                      <div class="popup__wrapper">
+                                      <div class="popup__wrapper-2">
                                         <div id="form-avatar">    
                                             <p class ="edit-main-info">Добавление файла</p>
                                             <form  method="post" id ="file-form">
@@ -284,14 +311,19 @@
                             </div>
                             <script>
                                 const button1 = document.querySelector('.load-file');
-                                    const form1 = document.querySelector('#file-form');
-                                    const popup1 = document.querySelector('.popup-1');
-        
-                                    button1.addEventListener('click', () => {
+                                const form1 = document.querySelector('.popup__wrapper-2');
+                                const popup1 = document.querySelector('.popup-1');
+
+                                button1.addEventListener('click', () => {
                                     form1.classList.add('open');
                                     popup1.classList.add('popup_open');
-                                    });
+                                });
 
+                                popup1.addEventListener('click', (event) => { 
+                                    if (!form1.contains(event.target)) { 
+                                        form1.classList.remove('open'); 
+                                        popup1.classList.remove('popup_open'); 
+                                    }});
                             </script>
                             <div class = "files-list-item">
                                 <p class = "file-item">
