@@ -14,16 +14,16 @@ function checkOwnerProfile(){
             return response.json();
         }
         else {
-            let link2 = document.getElementById("link-2");
+            let link2 = document.getElementById("link-2")
             let link3 = document.getElementById("link-3")
             let link4 = document.getElementById("link-4")
+            let link5 = document.getElementById("link-5")
             link2.style.display = 'none';
             link3.innerText = "Вход"
             link3.href = "/login"
             link3.style.marginLeft = "calc(50% - 130px)";
-            link4.innerText = "Регистрация"
-            link4.href = "/register"
-            // changeStyle()
+            link4.classList.toggle("hidden-button")
+            link5.classList.toggle("hidden-button")
         }
     })
     .then(data => {

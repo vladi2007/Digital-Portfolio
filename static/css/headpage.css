@@ -47,6 +47,10 @@ html {
     width: 130px;;
 }
 
+.hidden-button{
+    display:none;
+}
+
 a{
     text-decoration: none;
     color:black;
