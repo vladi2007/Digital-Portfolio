@@ -23,7 +23,7 @@ function checkOwnerProfile(){
             link3.style.marginLeft = "calc(50% - 130px)";
             link4.innerText = "Регистрация"
             link4.href = "/register"
-            changeStyle()
+            // changeStyle()
         }
     })
     .then(data => {

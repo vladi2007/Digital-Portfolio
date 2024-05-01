@@ -18,21 +18,25 @@
                         <!--Вот тут если не авторизированный пользователь, то вторая ссылка пропадает display:none, в третьей текст меняется на "Вход"
                         и добавляется margin-left: calc(50% - 130px);, у в четвертой текст меняется на "Регистрация" и соответственно ссылки меняются
                         все это по класссам и айдишникам джавой -->
-                <a href = "" 
-                    class="nav-link-4" id ="link-4"><nobr>Выйти</nobr></a>
-                <script>
-                    document.getElementById("link-4").addEventListener("click", function(event) {
-                        // event.preventDefault();
-                        fetch("/auth/logout", {
-                          method: "POST",
-                          headers: {
-                            "Content-Type": "application/json"
-                          }
-                        })
-                        location.reload();
-                    });
-                </script>
-                                                             
+                        <a href = ""
+                        class="nav-link-4" id ="link-4"><nobr>Выйти</nobr></a>      
+                    <script>
+                        document.getElementById("link-4").addEventListener("click", function(event) {
+                            event.preventDefault();
+                            fetch("/auth/logout", {
+                                method: "POST",
+                                headers: {
+                                "Content-Type": "application/json"
+                                }
+                            }).then( response => {
+                                if (response.status == 200 || response.status == 204)
+                                {
+                                    console.log("here")
+                                    location.reload();
+                                }
+                            })
+                        });
+                    </script>                         
         </header>
 
         <main>

@@ -22,12 +22,15 @@
                     class="nav-link-4" id ="link-4"><nobr>Выйти</nobr></a>      
                 <script>
                     document.getElementById("link-4").addEventListener("click", function(event) {
-                        // event.preventDefault();
+                        event.preventDefault();
                         fetch("/auth/logout", {
                             method: "POST",
                             headers: {
                             "Content-Type": "application/json"
                             }
+                        }).then( response => {
+                            if (response.status == 200 || response.status == 204)
+                                location.reload();
                         })
                     });
                 </script>                                 
