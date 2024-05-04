@@ -3,7 +3,7 @@ let formDataProfile3 = document.getElementById("form-3")
 formDataProfile3.addEventListener('submit', async event =>{
   event.preventDefault(); 
   const formData = new FormData(formDataProfile3); 
-  const response = await sendData(formData, '/avatar/upload');
+  const response = await sendAvatar(formData, '/avatar/upload');
   if (response.ok)
   {
     alert("Данные изменены")
@@ -14,7 +14,7 @@ formDataProfile3.addEventListener('submit', async event =>{
 })
 
 
-async function sendData(data, url) {
+async function sendAvatar(data, url) {
     return fetch(url, {
       method: 'PUT',
       body: data})

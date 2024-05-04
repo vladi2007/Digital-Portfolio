@@ -131,7 +131,7 @@
                                     <p class ="edit-other-info">Обновление фотографии</p>
                                     <form enctype="multipart/form-data" method="post"  id ="form-3">
                                          <input type = "file" name = "file" id ="control" accept=".jpg">
-                                         <input type ="submit" value ="Отправить" id="send-file">
+                                         <button type ="submit" id="send-file">Отправить</button>
                                     </form>
                                 </div>
                               </div>
@@ -281,33 +281,33 @@
                     <div class = "tags-list">
                         <p class = "results-header">Достижения:</p>
                         <div class = "tags-list-item">
-                            <form  method="post" id ="study-form">
-                            <button class = "tags-list-item-name" id = "study" data-tag="study">Учёба</button>
+                            <form  method="post" id ="study-form" data-tag="study">
+                                <button class = "tags-list-item-name" id = "study">Учёба</button>
                             </form>
                         </div>
                         <div class = "tags-list-item">
-                            <form  method="post" id ="science-form">
-                                <button class = "tags-list-item-name" id = "sсience" data-tag="sсience">Наука</button>
+                            <form  method="post" id ="science-form" data-tag="science">
+                                <button class = "tags-list-item-name" id = "science" >Наука</button>
                             </form>
                         </div>
                         <div class = "tags-list-item">
-                            <form  method="post" id ="not-education-form">
-                                <button class = "tags-list-item-name" id ="not-education" data-tag="not-education">Внеучебная деятельность</button>
+                            <form  method="post" id ="not-education-form" data-tag="not-education">
+                                <button class = "tags-list-item-name" id ="not-education" >Внеучебная деятельность</button>
                             </form>
                         </div>
                         <div class = "tags-list-item">
-                            <form  method="post" id ="creative-form" >
-                                <button class = "tags-list-item-name" id ="creative" data-tag="creative">Творчество</button>
+                            <form  method="post" id ="creative-form"  data-tag="creative" >
+                                <button class = "tags-list-item-name" id ="creative">Творчество</button>
                             </form>
                         </div>
                         <div class = "tags-list-item">
-                            <form  method="post" id ="sport-form">
-                                <button class = "tags-list-item-name" id ="sport" data-tag="sport">Спорт</button>
+                            <form  method="post" id ="sport-form" data-tag="sport">
+                                <button class = "tags-list-item-name" id ="sport" >Спорт</button>
                             </form>
                         </div>
                         <div class = "tags-list-item">
-                            <form  method="post" id ="other-form">
-                                <button class = "tags-list-item-name" id ="other" data-tag="other">Другое</button>
+                            <form  method="post" id ="other-form" data-tag="other">
+                                <button class = "tags-list-item-name" id ="other" >Другое</button>
                             </form>
                         </div>
                     </div>
@@ -347,10 +347,10 @@
                                     }});
                             </script>
                             <div class = "files-list-item">
-                                <p class = "file-item">
+                                <!-- <p class = "file-item">
                                     <span class = "file-name" id ="file-name">Имя Файла</span>
                                     <button class = "delete-file" id ="delete-file">Удалить файл</button>
-                                </p>
+                                </p> -->
                             </div>
                         </div>
                     </div>

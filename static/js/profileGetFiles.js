@@ -14,13 +14,16 @@ studyForm.addEventListener('submit', handleSubmit(studyForm));
 scienceForm.addEventListener('submit', handleSubmit(scienceForm));
 notEducationForm.addEventListener('submit', handleSubmit(notEducationForm));
 creativeForm.addEventListener('submit', handleSubmit(creativeForm));
-sportForm.addEventListener('submit', handleSubmit(sportForm));
 otherForm.addEventListener('submit', handleSubmit(otherForm));
+sportForm.addEventListener('submit', handleSubmit(sportForm));
+
 
 function handleSubmit(form) {
+    current_tag = form.getAttribute("data-tag")
+    console.log(current_tag)
     return async (event) => {
         event.preventDefault();
-        fetch(`file/search/${number}?tag=${form.getAttribute(current_tag)}`, {
+        fetch(`/file/search/${number}?tag=${form.getAttribute("data-tag")}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -33,7 +36,7 @@ function handleSubmit(form) {
     };
 }
 
-fetch(`file/search/${number}?tag=${"study"}`, {
+fetch(`/file/search/${number}?tag=${"study"}`, {
     method: 'GET',
     headers: {
         'Content-Type': 'application/json'
@@ -46,14 +49,15 @@ fetch(`file/search/${number}?tag=${"study"}`, {
 
 
 function DoFiles(data){
-    for (const element of array) {
+    DeleteFiles()
+    for (const element of data) {
     const fileItem = document.createElement('p');
     fileItem.classList.add('file-item');
 
     const fileName = document.createElement('span');
     fileName.classList.add('file-name');
     fileName.textContent = element["filename"];
-    fileItem.setAttribute('id', element["id"]); // Устанавливаем id
+    fileItem.setAttribute('id', element["id"]); 
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete-file');
@@ -62,8 +66,15 @@ function DoFiles(data){
     fileItem.appendChild(fileName);
     fileItem.appendChild(deleteButton);
 
-    const parentElement = document.querySelector('.files-list-item"');
+    const parentElement = document.querySelector('.files-list-item');
     parentElement.appendChild(fileItem);
 }
+}
+
+function DeleteFiles(){
+    var items = document.querySelectorAll('.file-item');
+    items.forEach(function(item) {
+    item.remove();
+});
 }
 
