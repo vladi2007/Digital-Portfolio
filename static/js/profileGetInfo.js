@@ -1,5 +1,4 @@
 
-infoUser = {}
 
 // const fullUrl = window.location.href;
 
@@ -11,14 +10,13 @@ if (match)
 fetch("/get_additional_information/"+number)
     .then(response => response.json())
     .then(data => {
-        infoUser = data;
-        var birth_date = infoUser.birth_date.substring(0, infoUser.birth_date.indexOf("T"));
+        var birth_date =  data.birth_date.substring(0,  data.birth_date.indexOf("T"));
         var elementIds = ["city", "first_name", "last_name", "technology", "sex", "education", "work", "vk", "email", "tg"];
 
         elementIds.forEach(function(id) {
             var element = document.getElementById(id);
             if (element) {
-                element.textContent = infoUser[id];
+                element.textContent =  data[id];
             }
         });
         

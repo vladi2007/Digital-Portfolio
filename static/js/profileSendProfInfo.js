@@ -56,7 +56,7 @@ formDataProfile2.addEventListener('submit', async event => {
 });
 
 //generate post-request
-async function sendData(data, ull, method) {
+async function sendData(data, ull) {
   return fetch(ull, {
     method: 'PUT',
     headers:

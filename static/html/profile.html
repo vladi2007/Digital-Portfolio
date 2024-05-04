@@ -57,8 +57,8 @@
                                         <p><input name="name" placeholder="Имя" type="text" id ="name-edit">
                                         <input name="surname" placeholder="Фамилия" type="text" id ="surname-edit" ></p>
                                         <p>Дата рождения <input name="date"  type="date" id ="date-edit" required></p>
-                                        <p><label>Мужской<input type = "radio" name ="sex"  value = "male" id="male-field-edit" required></label>
-                                        <label>Женский<input type = "radio" name ="sex" value = "female" id="female-field-edit" required></label> 
+                                        <p><label>Мужской<input type = "radio" name ="sex"  value = "Мужской" id="male-field-edit" required></label>
+                                        <label>Женский<input type = "radio" name ="sex" value = "Женский" id="female-field-edit" required></label> 
                                         <input name="city" placeholder="Город" type="text" id ="city-edit" ></p>          
                                         <button class = "last" type ="submit" id ="send-main-data-profile" >Сохранить</button>
                                     </form>
@@ -93,7 +93,7 @@
                                             </div>
                                             <span class="error_text"></span>
                                             <script>
-                                                
+                                           
                                                 let multiselect_block = document.querySelectorAll(".multiselect_block");
                                                 multiselect_block.forEach(parent => {
                                                     let label = parent.querySelector(".field_multiselect");
@@ -281,22 +281,34 @@
                     <div class = "tags-list">
                         <p class = "results-header">Достижения:</p>
                         <div class = "tags-list-item">
-                            <button class = "tags-list-item-name" id = "education">Учёба</button>
+                            <form  method="post" id ="study-form">
+                            <button class = "tags-list-item-name" id = "study" data-tag="study">Учёба</button>
+                            </form>
                         </div>
                         <div class = "tags-list-item">
-                            <button class = "tags-list-item-name" id = "since">Наука</button>
+                            <form  method="post" id ="science-form">
+                                <button class = "tags-list-item-name" id = "sсience" data-tag="sсience">Наука</button>
+                            </form>
                         </div>
                         <div class = "tags-list-item">
-                            <button class = "tags-list-item-name" id ="not-education">Внеучебная деятельность</button>
+                            <form  method="post" id ="not-education-form">
+                                <button class = "tags-list-item-name" id ="not-education" data-tag="not-education">Внеучебная деятельность</button>
+                            </form>
                         </div>
                         <div class = "tags-list-item">
-                            <button class = "tags-list-item-name" id ="creative">Творчество</button>
+                            <form  method="post" id ="creative-form" >
+                                <button class = "tags-list-item-name" id ="creative" data-tag="creative">Творчество</button>
+                            </form>
                         </div>
                         <div class = "tags-list-item">
-                            <button class = "tags-list-item-name" id ="sport">Спорт</button>
+                            <form  method="post" id ="sport-form">
+                                <button class = "tags-list-item-name" id ="sport" data-tag="sport">Спорт</button>
+                            </form>
                         </div>
                         <div class = "tags-list-item">
-                            <button class = "tags-list-item-name" id ="other">Другое</button>
+                            <form  method="post" id ="other-form">
+                                <button class = "tags-list-item-name" id ="other" data-tag="other">Другое</button>
+                            </form>
                         </div>
                     </div>
 
@@ -338,9 +350,6 @@
                                 <p class = "file-item">
                                     <span class = "file-name" id ="file-name">Имя Файла</span>
                                     <button class = "delete-file" id ="delete-file">Удалить файл</button>
-                                    <!--тут надо сделать чтоб удалялся файл, я хз как с моей стороный это сделать, что мне отправлять в форме, поэтому
-                                    кнопку сделал
-                                    тут в теории можно каждому файлу class = "file-item" навешивать айдишник и с ним работать-->
                                 </p>
                             </div>
                         </div>
@@ -358,6 +367,7 @@
                 avatarImg.src = imageUrl;
             }
         </script>
+        <script src ="/static/js/profileGetFiles.js"></script>
         <script src="/static/js/profileGetInfo.js"></script> 
         <script src="/static/js/profileSendProfInfo.js"></script>
         <script src="/static/js/profileSendAvatar.js"></script>
