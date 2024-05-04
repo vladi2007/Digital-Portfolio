@@ -1,8 +1,9 @@
 
 infoUser = {}
 
-const fullUrl = window.location.href;
-const match = fullUrl.match(/\/(\d+)$/); 
+// const fullUrl = window.location.href;
+
+// const match = fullUrl.match(/\/(\d+)$/); 
 
 if (match) 
     number = parseInt(match[1]); 

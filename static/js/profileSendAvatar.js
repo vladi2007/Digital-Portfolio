@@ -16,6 +16,6 @@ formDataProfile3.addEventListener('submit', async event =>{
 
 async function sendData(data, url) {
     return fetch(url, {
-      method: 'POST',
+      method: 'PUT',
       body: data})
 }
