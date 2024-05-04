@@ -13,7 +13,6 @@
 let formDataProfile1 = document.getElementById("form-1")
 let formDataProfile2 = document.getElementById("form-2")
 
-
 formDataProfile1.addEventListener('submit', async event =>{
   event.preventDefault(); 
   const formData = new FormData(formDataProfile1); 
@@ -54,11 +53,10 @@ formDataProfile2.addEventListener('submit', async event => {
   }
   else 
     alert("Не получилось")
-  
-
 });
+
 //generate post-request
-async function sendData(data, ull) {
+async function sendData(data, ull, method) {
   return fetch(ull, {
     method: 'PUT',
     headers:

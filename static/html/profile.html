@@ -31,10 +31,7 @@
                             }
                         }).then( response => {
                             if (response.status == 200 || response.status == 204)
-                            {
-                                console.log("here")
                                 location.reload();
-                            }
                         })
                     });
                 </script>                         
@@ -43,8 +40,7 @@
         <main>
             <section class = "main-info-1">
                 <div>                  
-                    <img class = "avatar" src ="/static/image/login.jpg" id = "profile-avatar" style="height: 120px; width: 120px;">
-                    
+                    <img class = "avatar" src =" " id = "profile-avatar" style="height: 120px; width: 120px;">
                     <div class = "name"  id = "user-name"> 
                         <span id = "first_name">Имя</span> 
                         <span id = "last_name">Фамилия</span> 
@@ -67,7 +63,7 @@
                                         <button class = "last" type ="submit" id ="send-main-data-profile" >Сохранить</button>
                                     </form>
                                     <p class ="edit-other-info">Редактирование остальной информации</p>
-                                    <form   method="post" id ="form-2">
+                                    <form method="post" id ="form-2">
                                         <div class="form_label">
                                             <div class="multiselect_block">
                                               <label for="select-1" class="field_multiselect">Чем вы занимаетесь</label>
@@ -131,6 +127,12 @@
                                         <br>
                                         <button class = "last-2" type ="submit" id ="send-other-data-profile" >Сохранить</button>
                                     </form>
+                                    <!-- форма для отправки авы -->
+                                    <p class ="edit-other-info">Обновление фотографии</p>
+                                    <form enctype="multipart/form-data" method="post"  id ="form-3">
+                                         <input type = "file" name = "file" id ="control" accept=".jpg">
+                                         <input type ="submit" value ="Отправить" id="send-file">
+                                    </form>
                                 </div>
                               </div>
                             </div>
@@ -185,7 +187,7 @@
                         <li class = "about-me-list-item">Город: <span id ="city"></span></li>
                         <li class = "about-me-list-item">Род деятельности: <span id ="technology"></span></li>
                         <li class = "about-me-list-item">Дата рождения: <span id ="birth_date"></span></li>
-                        <li class = "about-me-list-item">Пол: <span id ="sex">female</span></li>
+                        <li class = "about-me-list-item">Пол: <span id ="sex"></span></li>
                         <li class = "about-me-list-item">Образование: <span id ="education"></span></li>
                         <li class = "about-me-list-item">Работа: <span id ="work"></span></li>
                     </ul>
@@ -346,6 +348,16 @@
                 </div>             
             </section>
         </main> 
+        <script>
+            const fullUrl = window.location.href;
+            const match = fullUrl.match(/\/(\d+)$/);
+            if (match) {
+                const id = match[1];
+                const imageUrl = `/avatar/${id}`;
+                const avatarImg = document.getElementById('profile-avatar');
+                avatarImg.src = imageUrl;
+            }
+        </script>
         <script src="/static/js/profileGetInfo.js"></script> 
         <script src="/static/js/profileSendProfInfo.js"></script>
         <script src="/static/js/profileControler.js"></script>
