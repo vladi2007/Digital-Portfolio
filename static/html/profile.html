@@ -319,10 +319,10 @@
                                 <div class="popup-1">
                                     <div class="popup__container">
                                       <div class="popup__wrapper-2">
-                                        <div id="form-avatar">    
+                                        <div id="form-avatar">   
                                             <p class ="edit-main-info">Добавление файла</p>
-                                            <form  method="post" id ="file-form">
-                                                <input type = "file" name = "file" id ="control" multiple="multiple" accept=".jpg, .jpeg, .png">
+                                            <form enctype="multipart/form-data" method="post" id ="add-file-form">
+                                                <input type = "file" name = "file" id ="control"  accept=".jpg, .jpeg, .png">
                                                 <input type ="submit" value ="Отправить" id="send-file" accept=".jpg, .jpeg, .png">
                                             </form>
                                         </div>
@@ -347,11 +347,23 @@
                                     }});
                             </script>
                             <div class = "files-list-item">
-                                <!-- <p class = "file-item">
-                                    <span class = "file-name" id ="file-name">Имя Файла</span>
-                                    <button class = "delete-file" id ="delete-file">Удалить файл</button>
-                                </p> -->
+                                <p class = "file-item" id = "17">
+                                    <span class = "file-name">Имя Файла</span>
+                                    <button class = "download-file" id = "17" onclick="onDownLoad(this)">Скачать файл</button>
+                                    <button class = "delete-file" id ="17" onclick="onDelete(this)">Удалить файл</button>
+                                </p>
                             </div>
+                            <div class="popup-2">
+                                    <div class="popup__container">
+                                      <div class="popup__wrapper-3">
+                                        <div id="form-avatar">   
+                                            <p class ="edit-main-info">Вы точно хотите удалить файл?</p>
+                                            <button class = "agree-button" id = "17" onclick="onDownLoad(this)">Скачать файл</button>
+                                            <button class = "disage-button" id ="17" onclick="onDelete(this)">Удалить файл</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>             
@@ -367,11 +379,32 @@
                 avatarImg.src = imageUrl;
             }
         </script>
+        <script>
+            function onDelete(button) {
+                var id = button.id;
+                fetch(`/file/delete/${id}`)
+                .then(response => 
+                {
+                    if (response.ok)
+                    {
+                        alert("файл удален")
+                        document.querySelector(`.file-item#${id}`).remove()
+                    }
+                })
+            }
+
+            function onDownLoad(button){
+                var id = button.id;
+                fetch(`/file/download/${id}`)
+            }
+        </script>
+        </script>
         <script src ="/static/js/profileGetFiles.js"></script>
         <script src="/static/js/profileGetInfo.js"></script> 
-        <script src="/static/js/profileSendProfInfo.js"></script>
+        <script src="static/js/profileSendProfInfo.js"></script>
         <script src="/static/js/profileSendAvatar.js"></script>
         <script src="/static/js/profileControler.js"></script>
+        <script src="/static/js/profileAddFile.js"></script>
     </body>
     <footer>
     </footer>       

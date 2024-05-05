@@ -1,4 +1,5 @@
-let current_tag = "study";
+var current_tag = "study";
+
 let userFiles = {}
 const studyForm = document.getElementById('study-form');
 const scienceForm = document.getElementById('science-form');
@@ -19,11 +20,10 @@ sportForm.addEventListener('submit', handleSubmit(sportForm));
 
 
 function handleSubmit(form) {
-    current_tag = form.getAttribute("data-tag")
-    console.log(current_tag)
     return async (event) => {
+        current_tag = form.getAttribute("data-tag")
         event.preventDefault();
-        fetch(`/file/search/${number}?tag=${form.getAttribute("data-tag")}`, {
+        fetch(`/file/search/${number}?tag=${current_tag}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -31,7 +31,10 @@ function handleSubmit(form) {
         })
         .then(response => response.json())
         .then(data => {
-            DoFiles(data)
+            if (data.status == 400)
+                DoNotFile()
+            else
+                ViewFiles(data)
         })
     };
 }
@@ -44,31 +47,16 @@ fetch(`/file/search/${number}?tag=${"study"}`, {
 })
 .then(response => response.json())
 .then(data => {
-    DoFiles(data)
+    if (data.status == 400)
+        DoNotFile()
+    else
+        ViewFiles(data)
 })
 
 
-function DoFiles(data){
+function ViewFiles(data){
     DeleteFiles()
-    for (const element of data) {
-    const fileItem = document.createElement('p');
-    fileItem.classList.add('file-item');
-
-    const fileName = document.createElement('span');
-    fileName.classList.add('file-name');
-    fileName.textContent = element["filename"];
-    fileItem.setAttribute('id', element["id"]); 
-
-    const deleteButton = document.createElement('button');
-    deleteButton.classList.add('delete-file');
-    deleteButton.textContent = 'Удалить файл';
-
-    fileItem.appendChild(fileName);
-    fileItem.appendChild(deleteButton);
-
-    const parentElement = document.querySelector('.files-list-item');
-    parentElement.appendChild(fileItem);
-}
+    DoFiles()
 }
 
 function DeleteFiles(){
@@ -76,5 +64,54 @@ function DeleteFiles(){
     items.forEach(function(item) {
     item.remove();
 });
+}
+
+function DoFiles()
+{
+    for (const element of data)
+    {
+        const fileItem = document.createElement('p');
+        fileItem.classList.add('file-item');
+        fileItem.setAttribute('id', element["id"]); 
+
+        const fileName = document.createElement('span');
+        fileName.classList.add('file-name');
+        fileName.textContent = element["filename"];
+        // fileName.setAttribute('id', element["id"]); 
+
+        const deleteButton = document.createElement('button');
+        deleteButton.setAttribute('id', element["id"]); 
+        deleteButton.classList.add('delete-file');
+        deleteButton.textContent = 'Удалить файл';
+        deleteButton.onclick = function() {
+            onDelete(this);
+        };
+
+        const downloadButton = document.createElement('button');
+        downloadButton.setAttribute('id', element["id"]); 
+        downloadButton.classList.add('download-file');
+        downloadButton.textContent = 'Загрузить файл файл';
+        downloadButton.onclick = function() {
+            onDownLoad(this);
+        };
+
+        fileItem.appendChild(fileName);
+        fileItem.appendChild(deleteButton);
+
+        const parentElement = document.querySelector('.files-list-item');
+        parentElement.appendChild(fileItem);
+    }
+}
+
+function DoNotFile()
+{
+    const fileItem = document.createElement('p');
+    fileItem.classList.add('file-item');
+    const fileName = document.createElement('span');
+    fileName.classList.add('file-name');
+    fileName.textContent = "Нет файлов";
+    fileItem.appendChild(fileName);
+    const parentElement = document.querySelector('.files-list-item');
+    parentElement.appendChild(fileItem);
 }
 
