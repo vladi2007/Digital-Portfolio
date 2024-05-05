@@ -1,8 +1,8 @@
-let formDataAddFile = document.getElementById("form-3")
+let formDataProfile3 = document.getElementById("form-3")
 
-formDataAddFile.addEventListener('submit', async event =>{
+formDataProfile3.addEventListener('submit', async event =>{
   event.preventDefault(); 
-  const formData = new FormData(formDataAddFile); 
+  const formData = new FormData(formDataProfile3); 
   const response = await sendAvatar(formData, '/avatar/upload');
   if (response.ok)
   {
