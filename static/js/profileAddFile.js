@@ -2,8 +2,16 @@ let formDataAddFile = document.getElementById("add-file-form")
 
 formDataAddFile.addEventListener('submit', async event =>{
   event.preventDefault(); 
+  const fileInput = document.getElementById('file');
+  console.log(fileInput)
+  console.log(fileInput.files.length)
+  if (!fileInput.files || fileInput.files.length === 0) {
+    alert('Выберите файл перед отправкой');
+    return;
+  }
   const formData = new FormData(formDataAddFile); 
   const response = await sendFile(formData);
+  fileInput.value = '';
   if (response.ok) {
     alert("Файл добавлен");
     const responseData = await response.json();
@@ -30,7 +38,6 @@ function DoOneFile(data){
     const fileName = document.createElement('span');
     fileName.classList.add('file-name');
     fileName.textContent = data.filename;
-    // fileName.setAttribute('id', element["id"]); 
 
     const deleteButton = document.createElement('button');
     deleteButton.setAttribute('id', data.id); 

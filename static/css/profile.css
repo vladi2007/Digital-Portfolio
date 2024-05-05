@@ -6,6 +6,7 @@ html {
    flex-wrap:wrap; 
 }
 
+
 .row{
     width: 1360px;  
    display: flex;
@@ -226,7 +227,6 @@ ul{
    display:block;
    margin-top: 30px;;
    width: 340px;
-
    justify-content: center;
 }
 
@@ -240,11 +240,14 @@ ul{
 }
 
 .files{
-
    width: 300px;;
-
    margin-left:20px;
 
+}
+
+.active {
+   color:#000;
+   background-color: #f29316;
 }
 
 .files-list{
@@ -267,10 +270,11 @@ ul{
    margin-right:20px;
 }
 
-#control{
+#control, #file{
    color:#000;
    border-radius: 2px ;
 }
+
 
 #form-avatar{
    font-size: 16px;;
