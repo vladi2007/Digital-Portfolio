@@ -31,10 +31,12 @@ function handleSubmit(form) {
         })
         .then(response => response.json())
         .then(data => {
-            if (data.status == 400)
-                DoNotFile()
-            else
+            if (data.detail != "Not found")
                 ViewFiles(data)
+            else{
+                DeleteFiles();
+                DoNotFile();
+            }
         })
     };
 }
@@ -47,16 +49,17 @@ fetch(`/file/search/${number}?tag=${"study"}`, {
 })
 .then(response => response.json())
 .then(data => {
-    if (data.status == 400)
-        DoNotFile()
-    else
+    if (data.detail != "Not found")
         ViewFiles(data)
+    else{
+        DeleteFiles();
+        DoNotFile();
+    }
 })
-
 
 function ViewFiles(data){
     DeleteFiles()
-    DoFiles()
+    DoFiles(data)
 }
 
 function DeleteFiles(){
@@ -66,7 +69,7 @@ function DeleteFiles(){
 });
 }
 
-function DoFiles()
+function DoFiles(data)
 {
     for (const element of data)
     {
@@ -90,13 +93,14 @@ function DoFiles()
         const downloadButton = document.createElement('button');
         downloadButton.setAttribute('id', element["id"]); 
         downloadButton.classList.add('download-file');
-        downloadButton.textContent = 'Загрузить файл файл';
+        downloadButton.textContent = 'Загрузить файл';
         downloadButton.onclick = function() {
             onDownLoad(this);
         };
 
         fileItem.appendChild(fileName);
         fileItem.appendChild(deleteButton);
+        fileItem.appendChild(downloadButton);
 
         const parentElement = document.querySelector('.files-list-item');
         parentElement.appendChild(fileItem);
@@ -107,6 +111,7 @@ function DoNotFile()
 {
     const fileItem = document.createElement('p');
     fileItem.classList.add('file-item');
+    fileItem.setAttribute('id', "empty"); 
     const fileName = document.createElement('span');
     fileName.classList.add('file-name');
     fileName.textContent = "Нет файлов";
