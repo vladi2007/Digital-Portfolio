@@ -117,7 +117,6 @@
                                                     })
                                                 })
                                               </script>
-                                              <!-- скрипт который делает список выпадающий пиздатый- https://habr.com/ru/articles/564844/ -->
                                         </div>
                                         <p><input name="education" placeholder="Образование" type="text" id ="education-edit">
                                         <input name="work" placeholder="Работа" type="text" id ="work-edit"></p>
@@ -127,7 +126,6 @@
                                         <br>
                                         <button class = "last-2" type ="submit" id ="send-other-data-profile" >Сохранить</button>
                                     </form>
-                                    <!-- форма для отправки авы -->
                                     <p class ="edit-other-info">Обновление фотографии</p>
                                     <form enctype="multipart/form-data" method="post"  id ="form-3">
                                          <input type = "file" name = "file" id ="control" accept=".jpg">
@@ -150,9 +148,9 @@
                             var maleFieldEditInput = document.getElementById("male-field-edit");
                             var femaleFieldEditInput = document.getElementById("female-field-edit");
                             
-                            if (document.getElementById("sex").textContent === "male")
+                            if (document.getElementById("sex").textContent === "Мужской")
                                 maleFieldEditInput.checked = true;
-                            else if (document.getElementById("sex").textContent === "female")
+                            else if (document.getElementById("sex").textContent === "Женский")
                                 femaleFieldEditInput.checked = true;
                 
                             var dictionary = {
@@ -322,8 +320,8 @@
                                         <div id="form-avatar">   
                                             <p class ="edit-main-info">Добавление файла</p>
                                             <form enctype="multipart/form-data" method="post" id ="add-file-form">
-                                                <input type = "file" name = "file" id ="control"  accept=".jpg, .jpeg, .png">
-                                                <input type ="submit" value ="Отправить" id="send-file" accept=".jpg, .jpeg, .png">
+                                                <input type = "file" name = "file" id="file"  accept="">
+                                                <input type ="submit" value ="Отправить" id="send-file">
                                             </form>
                                         </div>
                                       </div>
@@ -382,13 +380,17 @@
         <script>
             function onDelete(button) {
                 var id = button.id;
-                fetch(`/file/delete/${id}`)
+                fetch(`/file/delete/${id}`,
+                {
+                    method: 'DELETE',
+            })
                 .then(response => 
                 {
                     if (response.ok)
                     {
                         alert("файл удален")
-                        document.querySelector(`.file-item#${id}`).remove()
+                        document.querySelector(`.file-item[id="${id}"]`).remove();
+                        AddEmpty()
                     }
                 })
             }
@@ -396,12 +398,34 @@
             function onDownLoad(button){
                 var id = button.id;
                 fetch(`/file/download/${id}`)
+                .then(response => 
+                {
+                    if (response.status == 200)
+                        console.log("Че-то не то")
+                })
+            }
+
+            function AddEmpty()
+            {
+                files = document.querySelectorAll(".file-item")
+                if (files.length == 0)
+                    DoNotFile()
             }
         </script>
         </script>
+        <script>
+            const buttons = document.querySelectorAll('.tags-list-item-name');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    console.log(this)
+                });
+            });
+        </script>
         <script src ="/static/js/profileGetFiles.js"></script>
         <script src="/static/js/profileGetInfo.js"></script> 
-        <script src="static/js/profileSendProfInfo.js"></script>
+        <script src="/static/js/profileSendProfInfo.js"></script>
         <script src="/static/js/profileSendAvatar.js"></script>
         <script src="/static/js/profileControler.js"></script>
         <script src="/static/js/profileAddFile.js"></script>
