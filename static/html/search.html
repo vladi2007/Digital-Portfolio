@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
-    <link rel="stylesheet" href="../css/search.css">   
+    <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="../css/profile.css">      
 </head>
 <body>
 <header class ="main-header">
@@ -23,23 +24,103 @@
 </header>
 
 <main>
-    <div class="search-input">
-        <input type ="text" name="search" id="mail-field" placeholder="Поиск" class="search-input-form">
-        <div class="multiselect_block">
-            <input id="checkbox-1" class="multiselect_checkbox" type="checkbox">
-            
-            
-    </div>
-    </div>
+    <div>                  
         
-    <select id="select-1" class="field_select" name="technology" multiple style="@media (width: 757px) { height: calc(4 * 38px)}">
-        <option value="all">IT</option>
-        <option value="HTML">Экономика</option>
-        <option value="CSS">Аналитика</option>
-        <option value="JavaScript">Юриспруденция</option>
-    </select>
-    
-    
+       
+        <div class="aboba">
+            <div class="search-input">
+                <input type ="text" name="search" id="mail-field" placeholder="Поиск" class="search-input-form">
+                    <button id="checkbox-1" class="multiselect_checkbox multiselect_block-1" type="checkbox">
+            </div>
+            <div class="popup">
+                <div class="popup__container">
+                  <div class="popup__wrapper">
+                    <div id="blablabla">    
+                        <form method="post" id ="form-2">
+                            <div class="form_label">
+                                <div class="multiselect_block">
+                                  <label for="select-2" class="field_multiselect">Чем вы занимаетесь</label>
+                                  <input id="checkbox-2" class="multiselect_checkbox" type="checkbox">
+                                  <label for="checkbox-2" class="multiselect_label"></label>
+                                  <select id="select-2" class="field_select" name="technology" multiple required style="@media (min-width: 768px) { height: calc(2    * 38px)}">
+                                        <option value="IT" id ="IT">IT</option>
+                                        <option value="Аналитика" id ="Analytic">Аналитика</option>
+                                        <option value="Архитектура" id ="Architecture">Архитектура</option>
+                                        <option value="Дизайн" id ="Design">Дизайн</option>
+                                        <option value="Журналистика" id ="Journalism">Журналистика</option>
+                                        <option value=" Инженерное Дело" id ="Engineering">Инженерное Дело</option>
+                                        <option value="Искусство" id ="Art">Искусство</option>
+                                        <option value="История" id ="History">История</option>
+                                        <option value="Культура" id ="Culture">Культура</option>    
+                                        <option value="Лингвистика" id ="Linguistics">Лингвистика</option>
+                                        <option value="Маркетинг" id ="Marketing">Маркетинг</option>
+                                        <option value="Медицина" id ="Medicine">Медицина</option>
+                                        <option value="Наука" id ="Science">Наука</option>
+                                        <option value="Педагогика" id ="Pedagogy">Педагогика</option>
+                                        <option value="Реклама" id ="Advertising">Реклама</option>
+                                        <option value="Строительство"id ="Construction">Строительство</option>
+                                        <option value="Фундаментальное образование" id ="Fundamental-education">Фундаментальное образование</option>
+                                        <option value="Экономика" id ="Economy">Экономика</option>
+                                  </select>
+                                  <span class="field_multiselect_help">Для выбора нескольких значений зажмите <b>Ctrl(или Command) и нажмите на элемент</b> </span>
+                                </div>
+                                <span class="error_text"></span>
+                                <script>
+                                           
+                                        let multiselect_block = document.querySelectorAll(".multiselect_block");
+                                        multiselect_block.forEach(parent => {
+                                            console.log(parent);
+                                            let label = parent.querySelector(".field_multiselect");
+                                            let select = parent.querySelector(".field_select");
+                                            let text = label.innerHTML;
+                                            console.log(select)
+                                            select.addEventListener("change", function(element) {
+                                                let selectedOptions = this.selectedOptions;
+                                                
+                                                label.innerHTML = "";
+                                                for (let option of selectedOptions) {
+                                                    let button = document.createElement("button");
+                                                    console.log(button)
+                                                    button.type = "button";
+                                                    button.className = "btn_multiselect";
+                                                    button.textContent = option.value;
+                                                    button.onclick = _ => {
+                                                        option.selected = false;
+                                                        button.remove();
+                                                        if (!select.selectedOptions.length) label.innerHTML = text
+                                                    };
+                                                    label.append(button);
+                                                }
+                                            })
+                                        })
+                                </script>
+                                  <!-- скрипт который делает список выпадающий пиздатый- https://habr.com/ru/articles/564844/ -->
+                            </div>
+                            <button class = "last-2" type ="submit" id ="send-other-data-profile" >Сохранить</button>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <script>
+            const editButton = document.querySelector('.multiselect_checkbox'); 
+            const form = document.querySelector('.popup__wrapper'); 
+            const popup = document.querySelector('.popup'); 
+
+            editButton.addEventListener('click', () => { 
+                form.classList.add('open'); 
+                popup.classList.add('popup_open'); 
+            }); 
+        
+            popup.addEventListener('click', (event) => { 
+                if (!form.contains(event.target)) { 
+                    form.classList.remove('open'); 
+                    popup.classList.remove('popup_open'); 
+            }});
+        </script>
+    </div> 
+        
     <ul class="list">
         <li class="el">
             <a class="user-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="../image/IMG_20240317_170456.jpg" class="avatar" id="ava-1">
@@ -54,28 +135,14 @@
             <div class="section"><p class="big-info" id="user-name-2">имя<br>фамилия</p></div></a>
         </li>
     </ul>
+    
+    <script src ="../js/profileGetFiles.js"></script>
+    <script src="../js/profileGetInfo.js"></script> 
+    <script src="../js/profileSendProfInfo.js"></script>
+    <script src="../js/profileSendAvatar.js"></script>
+    <script src="../js/profileControler.js"></script>
+    <script src="../js/profileAddFile.js"></script>
+        
 </main>
-<script>let multiselect_block = document.querySelectorAll(".field_select");
-    multiselect_block.forEach(parent => {
-        let label = parent.querySelector(".field_multiselect");
-        let select = parent.querySelector(".field_select");
-        let text = label.innerHTML;
-        select.addEventListener("change", function(element) {
-            let selectedOptions = this.selectedOptions;
-            label.innerHTML = "";
-            for (let option of selectedOptions) {
-                let button = document.createElement("button");
-                button.type = "button";
-                button.className = "btn_multiselect";
-                button.textContent = option.value;
-                button.onclick = _ => {
-                    option.selected = false;
-                    button.remove();
-                    if (!select.selectedOptions.length) label.innerHTML = text
-                };
-                label.append(button);
-            }
-        })
-    })</script>
 </body>
 </html>
