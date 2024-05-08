@@ -30,7 +30,9 @@ function checkOwnerProfile(){
     .then(data => {
         if (!data) {
             Is_auth = false;
-            changeStyle();
+            console.log("we are in controller")
+            console.log(Is_auth)
+            deleteOppotunEditStyle();
         }})
     }
 

@@ -60,6 +60,7 @@ fetch(`/file/search/${number}?tag=${"study"}`, {
 function ViewFiles(data){
     DeleteFiles()
     DoFiles(data)
+    console.log(Is_auth)
     if (!Is_auth){
         let fileItems = document.querySelectorAll('.file-item');
         fileItems.forEach(fileItem => {
