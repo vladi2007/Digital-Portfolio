@@ -31,7 +31,7 @@ function checkOwnerProfile(){
     .then(data => {
         if (!data) {
             Is_my_profile = false;
-            changeStyle();
+            deleteOppotunEditStyle();
             isSub();
         }
         else
@@ -46,7 +46,7 @@ function deleteOppotunEditStyle(){
 
 function isSub()
 {
-    fetch(`/sub/i_follow//${number}`, {
+    fetch(`/sub/i_follow/${number}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ function isSub()
     })
     .then(response => response.json())
     .then(data => {
-        if (!data){
+        if (data){
             document.getElementById("make-sub").classList.toggle("hidden-button")
             document.getElementById("refuse-sub").classList.toggle("hidden-button")
         }

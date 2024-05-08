@@ -1,46 +1,49 @@
 if (match) 
     number = parseInt(match[1]); 
 
-fetch("/sub/subscription_count/ "+ number)
+fetch(`/sub/subscriptions_count/${number}`)
 .then(response => response.json())
 .then(data => {
-    document.getElementById("subscriptions-count").textContent = data;
+    if (data.status != 404)
+        document.getElementById("subscriptions-count").textContent = data;
     });
 
-fetch("/sub/subscribers_count/" + number)
+fetch(`/sub/subscribers_count/${number}`)
 .then(response => response.json())
 .then(data => {
-    document.getElementById("subscribers-count").textContent = data;
+    if (data.status != 404)
+        document.getElementById("subscribers-count").textContent = data;
     });
 
 
-fetch("/sub/subscribers/" + number)
+fetch(`/sub/subscribers/${number}`)
 .then(response => response.json())
 .then(data => {
         if (data.status != 404)
-            ViewFiles(data[i])
+            ViewProFiles(data,'Subscribers-list')
     });
 
-fetch("/sub/subscriptions/" + number)
+fetch(`/sub/subscriptions/${number}`)
 .then(response => response.json())
 .then(data => {
         if (data.status != 404)
-            ViewFiles(data[i])
+            ViewProFiles(data, "subscriptions-list")
     });
     
 
 
-function ViewFiles(data){
+function ViewProFiles(data, href){
+    console.log(data)
     for (let i = 0; i < data.length; i++) {
         if (i < 6)
-            DoProfiles(data[i])
+            DoProfiles(data[i], href)
         else
             break;
     }  
 }
 
 
-function DoProfiles(data){
+function DoProfiles(data, href){
 
     var listItem = document.createElement('li');
     listItem.classList.add('Subscribers-list-item');
@@ -79,7 +82,7 @@ function DoProfiles(data){
     listItem.appendChild(link);
 
     // Находим родительский элемент, куда добавить созданный элемент списка
-    var parentElement = document.querySelector('.Subscribers-list'); // Замените '.parent-element-class' на селектор вашего родительского элемента
+    var parentElement = document.querySelector(`.${href}`); // Замените '.parent-element-class' на селектор вашего родительского элемента
 
     // Добавляем элемент списка в родительский элемент
     parentElement.appendChild(listItem);
