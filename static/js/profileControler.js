@@ -1,3 +1,4 @@
+Is_auth = true;
 
 checkOwnerProfile()
 
@@ -28,16 +29,12 @@ function checkOwnerProfile(){
     })
     .then(data => {
         if (!data) {
+            Is_auth = false;
             changeStyle();
         }})
     }
 
-function changeStyle(){
-    
+function deleteOppotunEditStyle(){
     document.getElementById("feedback").remove();
     document.getElementById("feedback-2").remove();
-    let fileItems = document.querySelectorAll('.file-item');
-    fileItems.forEach(fileItem => {
-        fileItem.querySelector('.delete-file').remove();
-    })
 }

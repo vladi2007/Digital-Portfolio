@@ -398,11 +398,24 @@
             function onDownLoad(button){
                 var id = button.id;
                 fetch(`/file/download/${id}`)
-                .then(response => 
-                {
-                    if (response.status == 200)
-                        console.log("Че-то не то")
+                .then(response => {
+                    if (!response.ok) {
+                    throw new Error('Ошибка загрузки файла');
+                    }
+                    return response.blob();
                 })
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = document.querySelector(`.file-name[id="${id}"]`);
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                })
+                .catch(error => {
+                    console.error('Произошла ошибка:', error);
+                });
             }
 
             function AddEmpty()

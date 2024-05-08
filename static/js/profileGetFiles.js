@@ -60,6 +60,12 @@ fetch(`/file/search/${number}?tag=${"study"}`, {
 function ViewFiles(data){
     DeleteFiles()
     DoFiles(data)
+    if (!Is_auth){
+        let fileItems = document.querySelectorAll('.file-item');
+        fileItems.forEach(fileItem => {
+            fileItem.querySelector('.delete-file').remove();
+        })
+    }
 }
 
 function DeleteFiles(){
@@ -80,27 +86,30 @@ function DoFiles(data)
         const fileName = document.createElement('span');
         fileName.classList.add('file-name');
         fileName.textContent = element["filename"];
-        // fileName.setAttribute('id', element["id"]); 
+        fileName.setAttribute('id', element["id"]); 
+        fileName.onclick = function(){
+            onDownLoad(this)
+        }
 
         const deleteButton = document.createElement('button');
         deleteButton.setAttribute('id', element["id"]); 
         deleteButton.classList.add('delete-file');
         deleteButton.textContent = 'Удалить файл';
         deleteButton.onclick = function() {
-            onDelete(this);
+            onDelete(this)
         };
 
-        const downloadButton = document.createElement('button');
-        downloadButton.setAttribute('id', element["id"]); 
-        downloadButton.classList.add('download-file');
-        downloadButton.textContent = 'Загрузить файл';
-        downloadButton.onclick = function() {
-            onDownLoad(this);
-        };
+        // const downloadButton = document.createElement('button');
+        // downloadButton.setAttribute('id', element["id"]); 
+        // downloadButton.classList.add('download-file');
+        // downloadButton.textContent = 'Загрузить файл';
+        // downloadButton.onclick = function() {
+        //     onDownLoad(this)
+        // };
 
         fileItem.appendChild(fileName);
         fileItem.appendChild(deleteButton);
-        fileItem.appendChild(downloadButton);
+        // fileItem.appendChild(downloadButton);
 
         const parentElement = document.querySelector('.files-list-item');
         parentElement.appendChild(fileItem);
