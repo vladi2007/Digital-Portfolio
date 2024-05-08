@@ -33,35 +33,31 @@ async function sendFile(data) {
 function DoOneFile(data){
     const fileItem = document.createElement('p');
     fileItem.classList.add('file-item');
-    fileItem.setAttribute('id', data["id"]); 
+    fileItem.setAttribute('id', data.id); 
 
     const fileName = document.createElement('span');
     fileName.classList.add('file-name');
-    fileName.textContent = data["filename"];
-    fileName.setAttribute('id', data["id"]); 
-    fileName.onclick = function(){
-        onDownLoad(this)
-    }
+    fileName.textContent = data.filename;
 
     const deleteButton = document.createElement('button');
-    deleteButton.setAttribute('id', data["id"]); 
+    deleteButton.setAttribute('id', data.id); 
     deleteButton.classList.add('delete-file');
     deleteButton.textContent = 'Удалить файл';
     deleteButton.onclick = function() {
-        onDelete(this)
+        onDelete(this);
     };
 
-    // const downloadButton = document.createElement('button');
-    // downloadButton.setAttribute('id', element["id"]); 
-    // downloadButton.classList.add('download-file');
-    // downloadButton.textContent = 'Загрузить файл';
-    // downloadButton.onclick = function() {
-    //     onDownLoad(this)
-    // };
+    const downloadButton = document.createElement('button');
+    downloadButton.setAttribute('id', data.id); 
+    downloadButton.classList.add('download-file');
+    downloadButton.textContent = 'Загрузить файл файл';
+    downloadButton.onclick = function() {
+        onDownLoad(this);
+    };
 
     fileItem.appendChild(fileName);
     fileItem.appendChild(deleteButton);
-    // fileItem.appendChild(downloadButton);
+    fileItem.appendChild(downloadButton);
 
     const parentElement = document.querySelector('.files-list-item');
     parentElement.appendChild(fileItem);

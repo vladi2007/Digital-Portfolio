@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="/static/css/profile.css">   
+        <link rel="stylesheet" href="/css/profile.css">   
     </head>
     <body>
         <header class ="main-header">
@@ -45,7 +45,10 @@
                         <span id = "first_name">Имя</span> 
                         <span id = "last_name">Фамилия</span> 
                     </div>
-                   
+                    <form id="form-sub">
+                        <button class="make-sub" type ="submit" id="make-sub">Подписаться</button>
+                        <button class="make-sub hidden-button" type ="submit" id="refuse-sub">Отписаться</button>
+                    </form>
                     <div id="feedback">
                         <button class ="edit-file">Редактировать профиль</button>
                         <div class="popup">
@@ -192,9 +195,9 @@
                 </div>
                 
                 <div class ="Subscriptions">
-                    <ul class ="Subscriptions-list"><a class = "go-to-Subscriptions-page" href ="#"><span class ="header">Подписки:</span> </a><span class ="header" id ="Subscriptions-count">0</span>
+                    <ul class ="Subscriptions-list"><a class = "go-to-Subscriptions-page" href ="#"><span class ="header">Подписки:</span> </a><span class ="header" id ="subscriptions-count">0</span>
                         <div class = "Subscribers-list">
-                            <li class = "Subscribers-list-item">
+                            <!-- <li class = "Subscribers-list-item">
                                 <a  href = "https://vk.com/miami51"  class = "profiles-href"><img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-1" style="height: 80px; width: 80px;" href="">
                                 <p class = "Subscribers-name" id ="name-1">Имя<br>Фамилия</p></a>
                             </li>
@@ -222,7 +225,7 @@
                             <li class = "Subscribers-list-item">
                                 <a href = "https://vk.com/miami51" class = "profiles-href"><img class = "Subscribers-avatar"src ="/static/image/login.jpg" id = "avatar-6" style="height: 80px; width: 80px;">
                                 <p class = "Subscribers-name" id ="name-6">Имя<br> Фамилия</p></a>
-                            </li>       
+                            </li>        -->
                         </div>   
                     </ul>
                 </div>
@@ -237,11 +240,11 @@
                 </div>
 
                 <div class ="Subscribers">
-                    <ul class ="Subscribers-text"><a class ="go-to-Subscribers-page" href ="#"><span class ="header">Подписчики:</span> </a><span class ="header" id ="Subscriptions-count">0</span>
+                    <ul class ="Subscribers-text"><a class ="go-to-Subscribers-page" href ="#"><span class ="header">Подписчики:</span> </a><span class ="header" id ="subscribers-count">0</span>
                         <div class = "Subscribers-list">
-                            <li class = "Subscribers-list-item">
+                            <!-- <li class = "Subscribers-list-item">
                                 <a href = "https://vk.com/miami51" class = "profiles-href"><img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-7" style="height: 80px; width: 80px;">
-                                <p class = "Subscribers-name" id ="name-7">Имя<br> Фамилия</p></a>
+                                <p class = "Subscribers-name" id ="first_name_sub">Имя</p> <p  class = "Subscribers-name" id ="last_name_sub">Фамилия</p></a>
                             </li>
 
                             <li class = "Subscribers-list-item">
@@ -267,7 +270,7 @@
                             <li class = "Subscribers-list-item">
                                 <a href = "https://vk.com/miami51" class = "profiles-href"><img class = "Subscribers-avatar" src ="/static/image/login.jpg" id = "avatar-12" style="height: 80px; width: 80px;">
                                 <p class = "Subscribers-name" id ="name-12">Имя<br> Фамилия</p></a>
-                            </li>
+                            </li> -->
                         </div>        
                     </ul>
                 </div>
@@ -408,7 +411,7 @@
                     const url = window.URL.createObjectURL(blob);
                     const a = document.createElement('a');
                     a.href = url;
-                    a.download = document.querySelector(`.file-name[id="${id}"]`).textContent;
+                    a.download = document.querySelector(`.file-name[id="${id}"]`).textContent;;
                     document.body.appendChild(a);
                     a.click();
                     window.URL.revokeObjectURL(url);
@@ -436,12 +439,13 @@
                 });
             });
         </script>
-        <script src="/static/js/profileControler.js"></script>
         <script src ="/static/js/profileGetFiles.js"></script>
         <script src="/static/js/profileGetInfo.js"></script> 
         <script src="/static/js/profileSendProfInfo.js"></script>
         <script src="/static/js/profileSendAvatar.js"></script>
+        <script src="/static/js/profileControler.js"></script>
         <script src="/static/js/profileAddFile.js"></script>
+        <script src="/static/js/profileGetSub.js"></script>
     </body>
     <footer>
     </footer>       

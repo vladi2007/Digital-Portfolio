@@ -1,4 +1,4 @@
-Is_auth = true;
+Is_my_profile = true;
 
 checkOwnerProfile()
 
@@ -25,18 +25,40 @@ function checkOwnerProfile(){
             link3.style.marginLeft = "calc(50% - 130px)";
             link4.classList.toggle("hidden-button")
             link5.classList.toggle("hidden-button")
+            document.getElementById("form-sub").remove();
         }
     })
     .then(data => {
         if (!data) {
-            Is_auth = false;
-            console.log("we are in controller")
-            console.log(Is_auth)
-            deleteOppotunEditStyle();
-        }})
-    }
+            Is_my_profile = false;
+            changeStyle();
+            isSub();
+        }
+        else
+            document.getElementById("form-sub").remove();
+    })
+}
 
 function deleteOppotunEditStyle(){
     document.getElementById("feedback").remove();
     document.getElementById("feedback-2").remove();
 }
+
+function isSub()
+{
+    fetch(`/sub/i_follow//${number}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (!data){
+            document.getElementById("make-sub").classList.toggle("hidden-button")
+            document.getElementById("refuse-sub").classList.toggle("hidden-button")
+        }
+    })
+}
+
+
