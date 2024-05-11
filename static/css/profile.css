@@ -4,8 +4,13 @@ html {
    display: flex;
    justify-content: center;
    flex-wrap:wrap; 
+   font-family: 'Helvetica';
 }
 
+#logo{
+   width: 90px;;
+   height: 30px;;
+} 
 
 .row{
     width: 1360px;  
@@ -24,21 +29,25 @@ html {
    text-align: center; 
 }
 
+
 .nav-link-1{
-   width: 40px;  
+   width: 90px;
+
 }
+
 
 .nav-link-2{
    width: 130px;
+   height: 20px;
 }
 
 .nav-link-3{
    width: 140px;
-   
+   height: 20px;
 }
 
 .nav-link-4{
-   width: 130px;;
+   width: 130px;;height: 20px;
 }
 
 .hidden-button{
@@ -76,6 +85,7 @@ body {
    padding-left: 20px;
    font-size: 50px;
    line-height: 20px;
+   display: inline-block;
 }
 
 .results{
@@ -114,6 +124,12 @@ body {
    font-size: 24px;
 
 
+}
+
+.subscriptions-list{
+
+   display: flex;
+   justify-content: space-between;
 }
 .contacts{border-radius: 8px;;
    color: #FFFFFF;
@@ -174,6 +190,9 @@ ul{
    margin-top: 20px;;
 }
 
+#last_name_sub{
+   margin-top: -20px;;
+}
 .Subscribers-name{
    margin-top: 0px;;
    font-size: 20px;;
@@ -323,10 +342,25 @@ footer{
    float:right;
    margin-top:-50px;
    margin-right:20px;
+   font-family: 'Helvetica';
 }
 
-
-
+#make-sub {
+   background-color: #19272A ;
+   color:#FFFFFF;
+   padding: 15px;;border-radius: 4px;
+   float:right;
+   margin-top:-50px;
+   margin-right:20px;font-family: 'Helvetica';
+}
+#refuse-sub{
+   background-color: #19272A ;
+   color:#FFFFFF;
+   padding: 15px;;border-radius: 4px;
+   float:right;
+   margin-top:-50px;
+   margin-right:20px;font-family: 'Helvetica';
+}
 
 .edit-main-info{color:#000;
    text-align: center;
