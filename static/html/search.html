@@ -6,15 +6,17 @@
     <title>Search</title>
     <link rel="stylesheet" href="/static/css/search.css">
     <link rel="stylesheet" href="/static/css/profile.css">
-    <link href = "/static/fonts/stylesheet.css" rel = "stylesheet" type = "text/css" />
+    <link href = "/static/css/stylesheet.css" rel = "stylesheet" type = "text/css" />
 </head>
 <body>
 <header class ="main-header">
     <div class ="row">
         <a href = "#" 
-            class="nav-link-1" id ="link-1"><nobr>Лого</nobr></a>
+            class="nav-link-1" id ="link-1">
+            <img src ="/static/image/logo.jpg" id = "logo">
+        </a>
         <a href = "#" 
-                class="nav-link-2" id ="link-2"><nobr>Мои достижения</nobr></a>
+                class="nav-link-2" id ="link-2"><nobr>Моя    страница</nobr></a>
         <a href = "#" 
             class="nav-link-3" id ="link-3"><nobr>Поиск</nobr></a>                           
                 <!--Вот тут если не авторизированный пользователь, то вторая ссылка пропадает display:none, в третьей текст меняется на "Вход"
@@ -30,7 +32,7 @@
        
         <div class="aboba">
             <div class="search-input">
-                <input type ="text" name="search" id="mail-field" placeholder="Поиск" class="search-input-form">
+                <input type ="text" name="search" id="mail-field" placeholder="Искать среди всех пользователей" class="search-input-form">
                     <button id="checkbox-1" class="multiselect_checkbox multiselect_block-1" type="checkbox">
             </div>
             <div class="popup">
@@ -128,24 +130,24 @@
     <ul class="list">
         <li class="el">
             <a class="user-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/static/image/ava.jpg" class="avatar-search" id="ava-1">
-            <div class="section"><p class="big-info" id="user-name-1">имя<br>фамилия</p></div></a>
+            <div class="section"><p class="big-info" id="user-name-1"><span id ="name-1">Имя</span> <span id ="surname-1">Фамилия</span></p></div></a>
         </li>
         <li class="el">
             <a class="user-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/static/image/ava.jpg" class="avatar-search" id="ava-2">
-            <div class="section"><p class="big-info" id="user-name-2">имя<br>фамилия</p></div></a>
+            <div class="section"><p class="big-info" id="user-name-2">Имя Фамилия</p></div></a>
         </li>
         <li class="el">
             <a class="user-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/static/image/ava.jpg" class="avatar-search" id="ava-2">
-            <div class="section"><p class="big-info" id="user-name-2">имя<br>фамилия</p></div></a>
+            <div class="section"><p class="big-info" id="user-name-2">Имя Фамилия</p></div></a>
         </li>
     </ul>
     
-    <script src ="../js/profileGetFiles.js"></script>
-    <script src="../js/profileGetInfo.js"></script> 
-    <script src="../js/profileSendProfInfo.js"></script>
-    <script src="../js/profileSendAvatar.js"></script>
-    <script src="../js/profileControler.js"></script>
-    <script src="../js/profileAddFile.js"></script>
+    <script src ="/static/js/profileGetFiles.js"></script>
+    <script src="/static/js/profileGetInfo.js"></script> 
+    <script src="/static/js/profileSendProfInfo.js"></script>
+    <script src="/static/js/profileSendAvatar.js"></script>
+    <script src="/static/js/profileControler.js"></script>
+    <script src="/static/js/profileAddFile.js"></script>
         
 </main>
 </body>
