@@ -17,6 +17,11 @@ html {
     letter-spacing: 0.04em;
     color: #686ea1;
   }
+
+  .form-styles {
+    display: flex;
+    flex-direction: column;
+  }
   
   .form_text:after {
     content: "*";
@@ -356,5 +361,3 @@ html {
       border-radius: 4px;
       margin-bottom: 19px;
   }
-
-  

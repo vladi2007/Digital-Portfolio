@@ -31,21 +31,21 @@
         
        
         <div class="aboba">
+            <form method="post" id="form-2" class="form-styles">
             <div class="search-input">
-                <input type ="text" name="search" id="mail-field" placeholder="Искать среди всех пользователей" class="search-input-form">
+                <input type ="text" name="search" id="mail-field" onkeyup="myFunction()" placeholder="Искать среди всех пользователей" class="search-input-form">
                     <button id="checkbox-1" class="multiselect_checkbox multiselect_block-1" type="checkbox">
             </div>
             <div class="popup">
                 <div class="popup__container">
                   <div class="popup__wrapper">
                     <div id="blablabla">    
-                        <form method="post" id ="form-2">
                             <div class="form_label">
                                 <div class="multiselect_block">
                                   <label for="select-2" class="field_multiselect">Чем вы занимаетесь</label>
                                   <input id="checkbox-2" class="multiselect_checkbox" type="checkbox">
                                   <label for="checkbox-2" class="multiselect_label"></label>
-                                  <select id="select-2" class="field_select" name="technology" multiple required style="@media (min-width: 768px) { height: calc(2    * 38px)}">
+                                  <select id="select-2" class="field_select" multiple required style="@media (min-width: 768px) { height: calc(2    * 38px)}" required>
                                         <option value="IT" id ="IT">IT</option>
                                         <option value="Аналитика" id ="Analytic">Аналитика</option>
                                         <option value="Архитектура" id ="Architecture">Архитектура</option>
@@ -70,45 +70,42 @@
                                 <span class="error_text"></span>
                                 <script>
                                            
-                                        let multiselect_block = document.querySelectorAll(".multiselect_block");
-                                        multiselect_block.forEach(parent => {
-                                            console.log(parent);
-                                            let label = parent.querySelector(".field_multiselect");
-                                            let select = parent.querySelector(".field_select");
-                                            let text = label.innerHTML;
-                                            console.log(select)
-                                            select.addEventListener("change", function(element) {
-                                                let selectedOptions = this.selectedOptions;
-                                                
-                                                label.innerHTML = "";
-                                                for (let option of selectedOptions) {
-                                                    let button = document.createElement("button");
-                                                    console.log(button)
-                                                    button.type = "button";
-                                                    button.className = "btn_multiselect";
-                                                    button.textContent = option.value;
-                                                    button.onclick = _ => {
-                                                        option.selected = false;
-                                                        button.remove();
-                                                        if (!select.selectedOptions.length) label.innerHTML = text
-                                                    };
-                                                    label.append(button);
-                                                }
-                                            })
+                                    let multiselect_block = document.querySelectorAll(".multiselect_block");
+                                    multiselect_block.forEach(parent => {
+                                        let label = parent.querySelector(".field_multiselect");
+                                        let select = parent.querySelector(".field_select");
+                                        let text = label.innerHTML;
+                                        select.addEventListener("change", function(element) {
+                                            let selectedOptions = this.selectedOptions;
+                                            label.innerHTML = "";
+                                            for (let option of selectedOptions) {
+                                                let button = document.createElement("button");
+                                                button.type = "button";
+                                                button.className = "btn_multiselect";
+                                                button.textContent = option.value;
+                                                button.onclick = _ => {
+                                                    option.selected = false;
+                                                    button.remove();
+                                                    if (!select.selectedOptions.length) label.innerHTML = text
+                                                };
+                                                label.append(button);
+                                            }
                                         })
-                                </script>
+                                    })
+                                  </script>
                                   <!-- скрипт который делает список выпадающий пиздатый- https://habr.com/ru/articles/564844/ -->
                             </div>
                             <div class="search-city-container">
-                                <input type ="text" name="search-city" id="mail-field" placeholder="Введите город" class="search-city">
+                                <input type ="text" name="search-city" id="city-input" onkeyup="myFunction2()" placeholder="Введите город" class="search-city">
                             </div>
                             <button class = "last-2" type ="submit" id ="send-other-data-profile" >Сохранить</button>
-                        </form>
+                        
                     </div>
                   </div>
                 </div>
               </div>
         </div>
+        </form>
         <script>
             const editButton = document.querySelector('.multiselect_checkbox'); 
             const form = document.querySelector('.popup__wrapper'); 
@@ -130,7 +127,17 @@
     <ul class="list">
         <li class="el">
             <a class="user-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/static/image/ava.jpg" class="avatar-search" id="ava-1">
-            <div class="section"><p class="big-info" id="user-name-1"><span id ="name-1">Имя</span> <span id ="surname-1">Фамилия,</span> <span id = "city-field">Город,</span>
+            <div class="section"><p class="big-info" id="user-name-1"><span class="name-search" id ="name-1">Имя</span> <span class="surename-search" id ="surname-1">Фамилия,</span> <span class="city-search" id = "city-field-1">Город,</span>
+            <span id ="doing">Род занятий</span></p></div></a>
+        </li>
+        <li class="el">
+            <a class="user-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/static/image/ava.jpg" class="avatar-search" id="ava-1">
+            <div class="section"><p class="big-info" id="user-name-1"><span class="name-search" id ="name-2">Акакий</span> <span class="surename-search" id ="surname-2">Акакиевич,</span> <span class="city-search" id = "city-field-2">Урюпинск,</span>
+            <span id ="doing">Род занятий</span></p></div></a>
+        </li>
+        <li class="el">
+            <a class="user-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/static/image/ava.jpg" class="avatar-search" id="ava-1">
+            <div class="section"><p class="big-info" id="user-name-1"><span class="name-search" id ="name-3">Сергей</span> <span class="surename-search" id ="surname-3">Первый,</span> <span class="city-search" id = "city-field-3">Орск,</span>
             <span id ="doing">Род занятий</span></p></div></a>
         </li>
         <!--<li class="el">
@@ -142,13 +149,49 @@
             <div class="section"><p class="big-info" id="user-name-2">Имя Фамилия</p></div></a>
         </li>-->
     </ul>
-    
-    <script src ="/static/js/profileGetFiles.js"></script>
-    <script src="/static/js/profileGetInfo.js"></script> 
-    <script src="/static/js/profileSendProfInfo.js"></script>
-    <script src="/static/js/profileSendAvatar.js"></script>
-    <script src="/static/js/profileControler.js"></script>
-    <script src="/static/js/profileAddFile.js"></script>
+    <script>
+        function myFunction() {
+          // Объявлять переменные
+          var input, filter, names, surenames, txtValue, secondTextValue, resTxt, li;
+          input = document.getElementById('mail-field');
+          filter = input.value.toUpperCase();
+          names = document.getElementsByClassName("name-search");
+          surenames = document.getElementsByClassName("surename-search");
+          li = document.getElementsByClassName("el")
+        
+          // Выполните цикл по всем элементам списка и скройте те, которые не соответствуют запросу поиска
+          for (i = 0; i < names.length; i++) {
+            txtValue = names[i].textContent || names[i].innerText;
+            secondTextValue = surenames[i].textContent || surenames[i].innerText
+            resTxt = txtValue + " " + secondTextValue
+            if (resTxt.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+        }
+    </script>
+    <script>
+        function myFunction2() {
+          // Объявлять переменные
+          var input, filter, names, txtValue, secondTextValue, li;
+          input = document.getElementById('city-input');
+          filter = input.value.toUpperCase();
+          names = document.getElementsByClassName("city-search");
+          li = document.getElementsByClassName("el")
+        
+          // Выполните цикл по всем элементам списка и скройте те, которые не соответствуют запросу поиска
+          for (i = 0; i < names.length; i++) {
+            txtValue = names[i].textContent || names[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+        }
+    </script>
         
 </main>
 </body>
