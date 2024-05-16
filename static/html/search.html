@@ -16,7 +16,7 @@
             <img src ="/static/image/logo.jpg" id = "logo">
         </a>
         <a href = "#" 
-                class="nav-link-2" id ="link-2"><nobr>Моя    страница</nobr></a>
+                class="nav-link-2" id ="link-2"><nobr>Моя страница</nobr></a>
         <a href = "#" 
             class="nav-link-3" id ="link-3"><nobr>Поиск</nobr></a>                           
                 <!--Вот тут если не авторизированный пользователь, то вторая ссылка пропадает display:none, в третьей текст меняется на "Вход"
@@ -28,83 +28,81 @@
 
 <main>
     <div>                  
-        
-       
         <div class="aboba">
             <form method="post" id="form-2" class="form-styles">
-            <div class="search-input">
-                <input type ="text" name="search" id="mail-field" onkeyup="myFunction()" placeholder="Искать среди всех пользователей" class="search-input-form">
-                    <button id="checkbox-1" class="multiselect_checkbox multiselect_block-1" type="checkbox">
-            </div>
-            <div class="popup">
-                <div class="popup__container">
-                  <div class="popup__wrapper">
-                    <div id="blablabla">    
-                            <div class="form_label">
-                                <div class="multiselect_block">
-                                  <label for="select-2" class="field_multiselect">Чем вы занимаетесь</label>
-                                  <input id="checkbox-2" class="multiselect_checkbox" type="checkbox">
-                                  <label for="checkbox-2" class="multiselect_label"></label>
-                                  <select id="select-2" class="field_select" multiple required style="@media (min-width: 768px) { height: calc(2    * 38px)}" required>
-                                        <option value="IT" id ="IT">IT</option>
-                                        <option value="Аналитика" id ="Analytic">Аналитика</option>
-                                        <option value="Архитектура" id ="Architecture">Архитектура</option>
-                                        <option value="Дизайн" id ="Design">Дизайн</option>
-                                        <option value="Журналистика" id ="Journalism">Журналистика</option>
-                                        <option value=" Инженерное Дело" id ="Engineering">Инженерное Дело</option>
-                                        <option value="Искусство" id ="Art">Искусство</option>
-                                        <option value="История" id ="History">История</option>
-                                        <option value="Культура" id ="Culture">Культура</option>    
-                                        <option value="Лингвистика" id ="Linguistics">Лингвистика</option>
-                                        <option value="Маркетинг" id ="Marketing">Маркетинг</option>
-                                        <option value="Медицина" id ="Medicine">Медицина</option>
-                                        <option value="Наука" id ="Science">Наука</option>
-                                        <option value="Педагогика" id ="Pedagogy">Педагогика</option>
-                                        <option value="Реклама" id ="Advertising">Реклама</option>
-                                        <option value="Строительство"id ="Construction">Строительство</option>
-                                        <option value="Фундаментальное образование" id ="Fundamental-education">Фундаментальное образование</option>
-                                        <option value="Экономика" id ="Economy">Экономика</option>
-                                  </select>
-                                  <span class="field_multiselect_help">Для выбора нескольких значений зажмите <b>Ctrl(или Command) и нажмите на элемент</b> </span>
-                                </div>
-                                <span class="error_text"></span>
-                                <script>
-                                           
-                                    let multiselect_block = document.querySelectorAll(".multiselect_block");
-                                    multiselect_block.forEach(parent => {
-                                        let label = parent.querySelector(".field_multiselect");
-                                        let select = parent.querySelector(".field_select");
-                                        let text = label.innerHTML;
-                                        select.addEventListener("change", function(element) {
-                                            let selectedOptions = this.selectedOptions;
-                                            label.innerHTML = "";
-                                            for (let option of selectedOptions) {
-                                                let button = document.createElement("button");
-                                                button.type = "button";
-                                                button.className = "btn_multiselect";
-                                                button.textContent = option.value;
-                                                button.onclick = _ => {
-                                                    option.selected = false;
-                                                    button.remove();
-                                                    if (!select.selectedOptions.length) label.innerHTML = text
-                                                };
-                                                label.append(button);
-                                            }
-                                        })
-                                    })
-                                  </script>
-                                  <!-- скрипт который делает список выпадающий пиздатый- https://habr.com/ru/articles/564844/ -->
-                            </div>
-                            <div class="search-city-container">
-                                <input type ="text" name="search-city" id="city-input" onkeyup="myFunction2()" placeholder="Введите город" class="search-city">
-                            </div>
-                            <button class = "last-2" type ="submit" id ="send-other-data-profile" >Сохранить</button>
-                        
-                    </div>
-                  </div>
+                
+                <div class="search-input">
+                    <input type ="text" name="first_name" id="first_name" placeholder="Введите имя. Например: Иван" class="search-input-form">
+                    <input type ="text" name="last_name" id="last_name" placeholder="Введите имя. Например: Иванов" class="search-input-form">
+                    <span id="checkbox-1" class="multiselect_checkbox multiselect_block-1" type="checkbox"></span>
                 </div>
-              </div>
-        </div>
+                <div class="popup">
+                    <div class="popup__container">
+                    <div class="popup__wrapper">
+                        <div id="blablabla">    
+                                <div class="form_label">
+                                    <div class="multiselect_block">
+                                    <label for="select-2" class="field_multiselect">Чем вы занимаетесь</label>
+                                    <input id="checkbox-2" class="multiselect_checkbox" type="checkbox">
+                                    <label for="checkbox-2" class="multiselect_label"></label>
+                                    <select id="select-2" class="field_select" name="technology" multiple required style="@media (min-width: 768px) { height: calc(2    * 38px)}" required>
+                                            <option value="IT" id ="IT">IT</option>
+                                            <option value="Аналитика" id ="Analytic">Аналитика</option>
+                                            <option value="Архитектура" id ="Architecture">Архитектура</option>
+                                            <option value="Дизайн" id ="Design">Дизайн</option>
+                                            <option value="Журналистика" id ="Journalism">Журналистика</option>
+                                            <option value=" Инженерное Дело" id ="Engineering">Инженерное Дело</option>
+                                            <option value="Искусство" id ="Art">Искусство</option>
+                                            <option value="История" id ="History">История</option>
+                                            <option value="Культура" id ="Culture">Культура</option>    
+                                            <option value="Лингвистика" id ="Linguistics">Лингвистика</option>
+                                            <option value="Маркетинг" id ="Marketing">Маркетинг</option>
+                                            <option value="Медицина" id ="Medicine">Медицина</option>
+                                            <option value="Наука" id ="Science">Наука</option>
+                                            <option value="Педагогика" id ="Pedagogy">Педагогика</option>
+                                            <option value="Реклама" id ="Advertising">Реклама</option>
+                                            <option value="Строительство"id ="Construction">Строительство</option>
+                                            <option value="Фундаментальное образование" id ="Fundamental-education">Фундаментальное образование</option>
+                                            <option value="Экономика" id ="Economy">Экономика</option>
+                                    </select>
+                                    <span class="field_multiselect_help">Для выбора нескольких значений зажмите <b>Ctrl(или Command) и нажмите на элемент</b> </span>
+                                    </div>
+                                    <span class="error_text"></span>
+                                    <script>
+                                            
+                                        let multiselect_block = document.querySelectorAll(".multiselect_block");
+                                        multiselect_block.forEach(parent => {
+                                            let label = parent.querySelector(".field_multiselect");
+                                            let select = parent.querySelector(".field_select");
+                                            let text = label.innerHTML;
+                                            select.addEventListener("change", function(element) {
+                                                let selectedOptions = this.selectedOptions;
+                                                label.innerHTML = "";
+                                                for (let option of selectedOptions) {
+                                                    let button = document.createElement("button");
+                                                    button.type = "button";
+                                                    button.className = "btn_multiselect";
+                                                    button.textContent = option.value;
+                                                    button.onclick = _ => {
+                                                        option.selected = false;
+                                                        button.remove();
+                                                        if (!select.selectedOptions.length) label.innerHTML = text
+                                                    };
+                                                    label.append(button);
+                                                }
+                                            })
+                                        })
+                                    </script>
+                                </div>
+                                <div class="search-city-container">
+                                    <input type ="text" name="city" id="city-input" placeholder="Введите город. Например: Екатеринбург" class="search-city">
+                                </div>
+                                <!-- <button class = "last-2" type ="submit" id ="send-other-data-profile" >Сохранить</button> -->
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </form>
         <script>
             const editButton = document.querySelector('.multiselect_checkbox'); 
@@ -131,14 +129,22 @@
             <span id ="doing">Род занятий</span></p></div></a>
         </li>
         <li class="el">
-            <a class="user-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/static/image/ava.jpg" class="avatar-search" id="ava-1">
-            <div class="section"><p class="big-info" id="user-name-1"><span class="name-search" id ="name-2">Акакий</span> <span class="surename-search" id ="surname-2">Акакиевич,</span> <span class="city-search" id = "city-field-2">Урюпинск,</span>
-            <span id ="doing">Род занятий</span></p></div></a>
+            <a class="user-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <img src="/static/image/ava.jpg" class="avatar-search" id="ava-1">
+                <div class="section">
+                    <p class="big-info" id="user-name-1">
+                        <span>Акакий</span> 
+                        <span>Акакиевич</span> 
+                        <span>Урюпинск</span>
+                        <span>Род занятий</span>
+                    </p>
+                </div>
+            </a>
         </li>
         <li class="el">
             <a class="user-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/static/image/ava.jpg" class="avatar-search" id="ava-1">
             <div class="section"><p class="big-info" id="user-name-1"><span class="name-search" id ="name-3">Сергей</span> <span class="surename-search" id ="surname-3">Первый,</span> <span class="city-search" id = "city-field-3">Орск,</span>
-            <span id ="doing">Род занятий</span></p></div></a>
+            <span id ="doing">IT</span></p></div></a>
         </li>
         <!--<li class="el">
             <a class="user-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/static/image/ava.jpg" class="avatar-search" id="ava-2">
@@ -192,7 +198,7 @@
           }
         }
     </script>
-        
+    <script src="/static/js/search.js"></script>
 </main>
 </body>
 </html>

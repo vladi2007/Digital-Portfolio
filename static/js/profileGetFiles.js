@@ -99,17 +99,8 @@ function DoFiles(data)
             onDelete(this)
         };
 
-        // const downloadButton = document.createElement('button');
-        // downloadButton.setAttribute('id', element["id"]); 
-        // downloadButton.classList.add('download-file');
-        // downloadButton.textContent = 'Загрузить файл';
-        // downloadButton.onclick = function() {
-        //     onDownLoad(this)
-        // };
-
         fileItem.appendChild(fileName);
         fileItem.appendChild(deleteButton);
-        // fileItem.appendChild(downloadButton);
 
         const parentElement = document.querySelector('.files-list-item');
         parentElement.appendChild(fileItem);
