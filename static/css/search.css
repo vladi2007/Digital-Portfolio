@@ -57,9 +57,9 @@ html {
   .multiselect_block-1 {
     position: relative;
     display: flex;
-    width: 51px;
+    width: 100px;
     margin-left: auto;
-    background-image: url("/static/image/filter.svg");
+    background: url("/static/image/filter.svg") no-repeat;
     background-color: #FBCD80;
   }
   
@@ -329,7 +329,7 @@ html {
   
   .section {
       margin-left: 10px;
-      
+      display: flex;
   }
   
   p {
@@ -341,9 +341,20 @@ html {
       font-size: 24px;
       line-height: 36px;
       font-weight: 500;
-      margin-bottom: 3px;
+      margin-bottom: auto;
      
-      margin-top: 54px;;
+      margin-top: auto;
+  }
+
+  .search-button {
+    position: relative;
+    display: flex;
+    margin: 5px;
+    width: 100px;
+    margin-left: auto;
+    background: url("/static/image/lupa.svg") no-repeat;
+    background-size: contain;
+    background-color: #FBCD80;
   }
   
   .small-info {
