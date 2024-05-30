@@ -1,3 +1,6 @@
+var search_button = document.getElementById("search-cheackbox");
+
+
 fetch("/search/users", {
     method: 'POST',
 })
@@ -11,49 +14,61 @@ fetch("/search/users", {
     }
 });
 
+
+search_button.addEventListener('click', event => {
+    event.preventDefault();
+    console.log("here")
+    sendDatasSearch()
+})
+
+
 document.addEventListener('keydown', event => {
     if (event.key === 'Enter' && event.target.tagName !== 'TEXTAREA') {
         event.preventDefault();
-        const form = document.getElementById("form-2");
-        const formData = new FormData(form);
-        let ull = '/search/users'
-        const data_search = {};
-        for (const pair of formData.entries()) {
-            if (pair[1] !== "" && pair[0] !== "technology") {
-                data_search[pair[0]] = pair[1];
-        }}
-        
-        if (Object.keys(data_search).length !== 0) {
-            ull += "?";
-            for (const key in data_search) {
-                ull += key + "=" + data_search[key] + "&";
-            }
-            ull = ull.slice(0, -1);
-        }
-
-        const formDataObject = {
-            technology: formData.getAll('technology')
-        };
-
-        console.log(ull)
-        console.log(formDataObject)
-
-        fetch(ull, {
-            method: 'POST',
-            headers:
-            { 'Content-Type': 'application/json'},
-            body: JSON.stringify(formDataObject)})
-        .then(response => response.json())
-        .then(data => {
-            if (data.status != 404)
-                ViewProFiles(data)
-            else{
-                DeleteProfiles();
-                DoNotFound();
-            }
-        });
+        sendDatasSearch()
     }
-});
+})
+
+
+function sendDatasSearch() {
+    const form = document.getElementById("form-2");
+    const formData = new FormData(form);
+    let ull = '/search/users'
+    const data_search = {};
+    for (const pair of formData.entries()) {
+        if (pair[1] !== "" && pair[0] !== "technology") {
+            data_search[pair[0]] = pair[1];
+    }}
+    
+    if (Object.keys(data_search).length !== 0) {
+        ull += "?";
+        for (const key in data_search) {
+            ull += key + "=" + data_search[key] + "&";
+        }
+        ull = ull.slice(0, -1);
+    }
+
+    const formDataObject = {
+        technology: formData.getAll('technology')
+    };
+
+    console.log(ull)
+    console.log(formDataObject)
+
+    fetch(ull, {
+        method: 'POST',
+        headers:
+        { 'Content-Type': 'application/json'},
+        body: JSON.stringify(formDataObject)})
+    .then(response => response.json())
+    .then(data => {
+        if (data.status != 404)
+            ViewProFiles(data)
+        else{
+            DeleteProfiles();
+            DoNotFound();
+        }
+    })}
 
 function ViewProFiles(data){
     DeleteProfiles();
