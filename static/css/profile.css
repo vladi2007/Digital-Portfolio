@@ -258,11 +258,20 @@ ul{
    width: 320px;;
 }
 
-.files{
-   width: 300px;;
-   margin-left:20px;
+.files-list-item{direction: ltr; display: inline-block;word-break:Break-all; 
+
+   height: 100%;;
+   overflow-y: scroll;
+  
+   overflow-x: hidden;
+   width: 600px;;
+   transform: scaleX(-1);
 
 }
+.files-list-item > *{
+   transform: scaleX(-1);
+}
+
 
 .active {
    color:#000;
@@ -275,6 +284,7 @@ ul{
    background-color: #19272A ;
    height: 680px;;
    width: 860px;;
+   margin-left:20px;
 
    margin-top:20px;
 }
@@ -283,7 +293,7 @@ ul{
    background-color: #FBCD80;
    color:#000;font-size: 20px;
    float: right;
-   margin-top:30px;
+   margin-top:14px;
    border-radius: 4px;;
    padding: 10px;;
    margin-right:20px;
@@ -305,14 +315,16 @@ color:#000;padding: 10px;
 margin-top:48.5px;  margin-left:12px; border-radius: 4px;;
 }
 
-.files-list-item{display: inline-block;word-break:Break-all;
 
-}
 
 .file-item{
    font-size: 24px;background-color: #FBCD80;;;color:#000;border-radius: 4px;;padding: 10px;;margin-top: 14px;;
-   margin-left:20px;
-   width: 800px;;word-break:Break-all;
+   margin-left:50px;
+   width: 500px;;word-break:Break-all;
+}
+
+.file-name{
+   text-align: left;;
 }
 
 #clear{

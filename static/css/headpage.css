@@ -22,8 +22,9 @@ html {
 }
 
 #logo{
-    width: 90px;;
-    height: 30px;;
+    width: 80px;;
+    height: 25px;;
+    margin-top:-2px;
  } 
 .row > a {
     padding: 5px 15px;;
@@ -33,8 +34,21 @@ html {
     text-align: center; 
 }
 
+#qvadrat-1{
+    height: 125px;;;
+}
 
+#qvadrat-2{
+    height: 125px;;;
+}
 
+#qvadrat-3{
+    height: 105px;;;
+}
+
+#qvadrat-4{
+    height: 105px;;;
+}
 .nav-link-2{
     width: 130px;height: 20px;
 }
