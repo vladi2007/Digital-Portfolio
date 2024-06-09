@@ -258,19 +258,25 @@ ul{
    width: 320px;;
 }
 
-.files-list-item{direction: ltr; display: inline-block;word-break:Break-all; 
 
-   height: 100%;;
+
+.files-list-item {
+   direction: ltr;
+   display: inline-block;
+   word-break: break-all;
+   height: 100%;
    overflow-y: scroll;
-  
    overflow-x: hidden;
-   width: 600px;;
-   transform: scaleX(-1);
+   width: 600px;
+}
 
+/* Стили для скрытия скроллбара */
+.files-list-item::-webkit-scrollbar {
+   width: 0; /* Скрыть скроллбар */
+   height: 0; /* Скрыть горизонтальный скроллбар (если нужен) */
 }
-.files-list-item > *{
-   transform: scaleX(-1);
-}
+
+
 
 
 .active {

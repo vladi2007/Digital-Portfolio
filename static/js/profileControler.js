@@ -24,6 +24,7 @@ function checkOwnerProfile(){
             // link3.innerText = "Вход"
             // link3.href = "/login"
             // link3.style.marginLeft = "calc(50% - 130px)";
+            link2.classList.toggle("hidden-button")
             link4.classList.toggle("hidden-button")
             link5.classList.toggle("hidden-button")
             link6.classList.toggle('hidden-button')
