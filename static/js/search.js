@@ -106,9 +106,10 @@ function DoProfiles(data){
         document.createElement('span'),
         document.createElement('span'),
         document.createElement('span'),
-        // document.createElement('span')
     ];
-
+    newSpans[0].className = "name-search"
+    newSpans[1].className = "surename-search"
+    newSpans[2].className = "city-search"
     newSpans[0].textContent = data.first_name;
     newSpans[1].textContent = data.last_name;
     newSpans[2].textContent = data.city;

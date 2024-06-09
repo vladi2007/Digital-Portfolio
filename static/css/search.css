@@ -100,6 +100,10 @@ html {
   }
   
   
+span{
+    margin-right: 5px;
+}
+
   .main-header{ position: sticky;
       top:10px;
   }
@@ -335,7 +339,6 @@ html {
       line-height: 36px;
       font-weight: 500;
       margin-bottom: auto;
-     
       margin-top: auto;
   }
 
